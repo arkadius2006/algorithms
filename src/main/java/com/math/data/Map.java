@@ -4,6 +4,8 @@ public interface Map {
 
     Domain keyDomain();
 
+    Object reduce(MapReduceOperation op);
+
     boolean containsKey(Object key);
 
     Duple getDuple(Object key);
