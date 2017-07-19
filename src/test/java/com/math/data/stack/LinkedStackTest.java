@@ -40,4 +40,22 @@ public class LinkedStackTest {
         Stack stack = new LinkedStack();
         stack.top();
     }
+
+    @Test
+    public void lifo() {
+        Stack stack = new LinkedStack();
+
+        Assert.assertTrue(stack.isEmpty());
+
+        for (int i = 0; i < 10; i++) {
+            stack.push(i);
+        }
+
+        for (int i = 9; i >= 0; i--) {
+            Object o = stack.pop();
+            Assert.assertEquals(i, o);
+        }
+
+        Assert.assertTrue(stack.isEmpty());
+    }
 }
