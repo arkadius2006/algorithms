@@ -6,23 +6,23 @@ public interface OrderedMap extends Map {
     OrderedDomain keyDomain();
 
     @Override
-    OrderedMap add(Object key, Object value);
+    OrderedMap add(Object key, Object value) throws DuplicateKeyException;
 
     @Override
-    OrderedMap replace(Object key, Object newValue);
+    OrderedMap replace(Object key, Object newValue) throws NoKeyException;
 
     @Override
-    OrderedMap remove(Object key);
+    OrderedMap remove(Object key) throws NoKeyException;
 
-    Duple nextDuple(Object a);
+    Duple higherDuple(Object a) throws NoKeyException;
 
-    Duple prevDuple(Object a);
+    Duple lowerDuple(Object a) throws NoKeyException;
 
-    Duple minDuple();
+    Duple minDuple() throws NoKeyException;
 
-    Duple maxDuple();
+    Duple maxDuple() throws NoKeyException;
 
-    Duple floorDuple(Object a);
+    Duple floorDuple(Object a) throws NoKeyException;
 
-    Duple ceilDuple(Object a);
+    Duple ceilDuple(Object a) throws NoKeyException;
 }

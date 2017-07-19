@@ -6,20 +6,20 @@ public interface OrderedSet extends Set {
     OrderedDomain domain();
 
     @Override
-    OrderedSet add(Object a);
+    OrderedSet add(Object a) throws DuplicateKeyException;
 
     @Override
-    OrderedSet remove(Object a);
+    OrderedSet remove(Object a) throws NoKeyException;
 
-    Object next(Object a);
+    Object higher(Object a) throws NoKeyException;
 
-    Object prev(Object a);
+    Object lower(Object a) throws NoKeyException;
 
-    Object min();
+    Object min() throws NoKeyException;
 
-    Object max();
+    Object max() throws NoKeyException;
 
-    Object floor(Object a);
+    Object floor(Object a) throws NoKeyException;
 
-    Object ceil(Object a);
+    Object ceil(Object a) throws NoKeyException;
 }

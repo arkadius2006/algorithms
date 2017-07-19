@@ -8,11 +8,11 @@ public interface Map {
 
     boolean containsKey(Object key);
 
-    Duple getDuple(Object key);
+    Duple getDuple(Object key) throws NoKeyException;
 
-    Map add(Object key, Object value);
+    Map add(Object key, Object value) throws DuplicateKeyException;
 
-    Map replace(Object key, Object newValue);
+    Map replace(Object key, Object newValue) throws NoKeyException;
 
-    Map remove(Object key);
+    Map remove(Object key) throws NoKeyException;
 }
