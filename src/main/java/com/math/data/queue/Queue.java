@@ -1,12 +1,12 @@
-package com.math.data;
+package com.math.data.queue;
 
 public interface Queue {
+
+    boolean isEmpty();
 
     boolean isFull();
 
     void enqueue(Object o) throws QueueOverflowException;
-
-    boolean isEmpty();
 
     Object dequeue() throws QueueUnderflowException;
 
