@@ -1,14 +1,14 @@
-package com.math.data;
+package com.math.data.stack;
 
 public interface Stack {
 
     boolean isEmpty();
 
-    Object pop() throws StackUnderflowException;
-
-    Object top() throws StackUnderflowException;
-
     boolean isFull();
 
     void push(Object o) throws StackOverflowException;
+
+    Object pop() throws StackUnderflowException;
+
+    Object top() throws StackUnderflowException;
 }
