@@ -13,6 +13,6 @@ public class QueueUnderflowException extends RuntimeException {
 
     @Override
     public String toString() {
-        return "Queue overflow: " + queue;
+        return "Queue underflow: " + queue;
     }
 }

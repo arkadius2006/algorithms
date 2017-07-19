@@ -3,7 +3,7 @@ package com.math.data.stack;
 import java.util.Objects;
 
 public class LinkedStack implements Stack {
-    private Item top;
+    private Top top;
 
     public LinkedStack() {
         this.top = null;
@@ -22,7 +22,7 @@ public class LinkedStack implements Stack {
     @Override
     public void push(Object o) throws StackOverflowException {
         Objects.requireNonNull(o);
-        Item newTop = new Item();
+        Top newTop = new Top();
         newTop.data = o;
         newTop.prev = this.top;
         this.top = newTop;
@@ -48,8 +48,8 @@ public class LinkedStack implements Stack {
         return top.data;
     }
 
-    private class Item {
+    private class Top {
         Object data;
-        Item prev;
+        Top prev;
     }
 }
