@@ -4,6 +4,8 @@ public interface Set {
 
     Domain domain();
 
+    Object reduce(SetReduceOperation op);
+
     int count();
 
     boolean isEmpty();
