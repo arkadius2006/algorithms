@@ -1,4 +1,4 @@
-package com.math.data.stack;
+package com.math.data.queue;
 
 import com.math.data.queue.LinkedQueue;
 import com.math.data.queue.Queue;
@@ -46,5 +46,23 @@ public class LinkedQueueTest {
     public void underflowPeek() {
         Queue queue = new LinkedQueue();
         queue.peek();
+    }
+
+    @Test
+    public void fifo() {
+        Queue queue = new LinkedQueue();
+
+        Assert.assertTrue(queue.isEmpty());
+
+        for (int i = 0; i < 10; i++) {
+            queue.enqueue(i);
+        }
+
+        for (int i = 0; i < 10; i++) {
+            Object o = queue.dequeue();
+            Assert.assertEquals(i, o);
+        }
+
+        Assert.assertTrue(queue.isEmpty());
     }
 }
