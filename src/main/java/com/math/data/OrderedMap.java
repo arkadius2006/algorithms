@@ -1,18 +1,18 @@
 package com.math.data;
 
-public interface OrderedDomainMap extends DomainMap {
+public interface OrderedMap extends Map {
 
     @Override
     OrderedDomain keyDomain();
 
     @Override
-    OrderedDomainMap add(Object key, Object value);
+    OrderedMap add(Object key, Object value);
 
     @Override
-    OrderedDomainMap replace(Object key, Object newValue);
+    OrderedMap replace(Object key, Object newValue);
 
     @Override
-    OrderedDomainMap remove(Object key);
+    OrderedMap remove(Object key);
 
     Duple nextDuple(Object a);
 

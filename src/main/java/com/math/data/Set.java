@@ -1,6 +1,6 @@
 package com.math.data;
 
-public interface DomainSet {
+public interface Set {
 
     Domain domain();
 
@@ -10,7 +10,7 @@ public interface DomainSet {
 
     boolean contains(Object o);
 
-    DomainSet add(Object a);
+    Set add(Object a);
 
-    DomainSet remove(Object a);
+    Set remove(Object a);
 }

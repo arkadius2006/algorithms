@@ -1,15 +1,15 @@
 package com.math.data;
 
-public interface OrderedDomainSet extends DomainSet {
+public interface OrderedSet extends Set {
 
     @Override
     OrderedDomain domain();
 
     @Override
-    OrderedDomainSet add(Object a);
+    OrderedSet add(Object a);
 
     @Override
-    OrderedDomainSet remove(Object a);
+    OrderedSet remove(Object a);
 
     Object next(Object a);
 
