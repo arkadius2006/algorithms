@@ -12,7 +12,7 @@ public interface Set {
 
     boolean contains(Object o);
 
-    Set add(Object a);
+    Set add(Object a) throws DuplicateKeyException;
 
-    Set remove(Object a);
+    Set remove(Object a) throws NoKeyException;
 }
