@@ -60,4 +60,24 @@ public class ArrayStackTest {
         stack.push("1");
         stack.push("2");
     }
+
+    @Test
+    public void lifo() {
+        Stack stack = new ArrayStack(10);
+
+        Assert.assertTrue(stack.isEmpty());
+
+        for (int i = 0; i < 10; i++) {
+            stack.push(i);
+        }
+
+        Assert.assertTrue(stack.isFull());
+
+        for (int i = 9; i >= 0; i--) {
+            Object o = stack.pop();
+            Assert.assertEquals(i, o);
+        }
+
+        Assert.assertTrue(stack.isEmpty());
+    }
 }
