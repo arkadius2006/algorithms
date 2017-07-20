@@ -69,4 +69,9 @@ class ArrayQueue implements Queue {
         return data[front];
     }
 
+    @Override
+    public String toString() {
+        return getClass().getSimpleName();
+    }
+
 }

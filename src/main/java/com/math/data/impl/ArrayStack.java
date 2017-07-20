@@ -59,4 +59,9 @@ class ArrayStack implements Stack {
 
         return data[top - 1];
     }
+
+    @Override
+    public String toString() {
+        return getClass().getSimpleName();
+    }
 }

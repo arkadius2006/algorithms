@@ -1,16 +1,15 @@
 package com.math.data.impl;
 
-import com.math.data.OverflowException;
 import com.math.data.Stack;
 import com.math.data.UnderflowException;
 
 import java.util.Objects;
 
 class LinkedStack implements Stack {
-    private Top top;
+    private Node top;
 
     public LinkedStack() {
-        this.top = null;
+        top = null;
     }
 
     @Override
@@ -24,12 +23,14 @@ class LinkedStack implements Stack {
     }
 
     @Override
-    public void push(Object o) throws OverflowException {
+    public void push(Object o) {
         Objects.requireNonNull(o);
-        Top newTop = new Top();
-        newTop.data = o;
-        newTop.prev = this.top;
-        this.top = newTop;
+
+        Node a = new Node();
+        a.data = o;
+
+        a.next = top;
+        top = a;
     }
 
     @Override
@@ -38,9 +39,9 @@ class LinkedStack implements Stack {
             throw new UnderflowException(this);
         }
 
-        Object popped = top.data;
-        top = top.prev;
-        return popped;
+        Object o = top.data;
+        top = top.next;
+        return o;
     }
 
     @Override
@@ -52,8 +53,13 @@ class LinkedStack implements Stack {
         return top.data;
     }
 
-    private class Top {
+    private static class Node {
         Object data;
-        Top prev;
+        Node next; // the node below, or null if this is bottom
+    }
+
+    @Override
+    public String toString() {
+        return getClass().getSimpleName();
     }
 }
