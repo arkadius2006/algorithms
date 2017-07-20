@@ -12,24 +12,6 @@ public class LinkedStackTest {
         Assert.assertTrue(stack.isEmpty());
     }
 
-    @Test
-    public void pushPop() {
-        Stack stack = new LinkedStack();
-        stack.push("1");
-        Object popped = stack.pop();
-        Assert.assertEquals("1", popped);
-        Assert.assertTrue(stack.isEmpty());
-    }
-
-    @Test
-    public void pushTop() {
-        Stack stack = new LinkedStack();
-        stack.push("1");
-        Object topped = stack.top();
-        Assert.assertEquals("1", topped);
-        Assert.assertFalse(stack.isEmpty());
-    }
-
     @Test(expected = UnderflowException.class)
     public void underflowPop() {
         Stack stack = new LinkedStack();
@@ -45,16 +27,16 @@ public class LinkedStackTest {
     @Test
     public void lifo() {
         Stack stack = new LinkedStack();
-
         Assert.assertTrue(stack.isEmpty());
 
-        for (int i = 0; i < 10; i++) {
+        for (int i = 0; i <= 9; i++) {
             stack.push(i);
         }
 
+        // LIFO logic
+        Assert.assertEquals(9, stack.top());
         for (int i = 9; i >= 0; i--) {
-            Object o = stack.pop();
-            Assert.assertEquals(i, o);
+            Assert.assertEquals(i, stack.pop());
         }
 
         Assert.assertTrue(stack.isEmpty());

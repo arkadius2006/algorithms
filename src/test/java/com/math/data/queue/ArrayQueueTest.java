@@ -18,33 +18,29 @@ public class ArrayQueueTest {
     }
 
     @Test
-    public void enqueueDequeue() {
-        Queue queue = new ArrayQueue(1);
+    public void fifo() {
+        Queue queue = new ArrayQueue(10);
         Assert.assertTrue(queue.isEmpty());
 
-        queue.enqueue("1");
+        for (int i = 0; i < 10; i++) {
+            queue.enqueue(i);
+        }
+
         Assert.assertTrue(queue.isFull());
 
-        Object dequeued = queue.dequeue();
-        Assert.assertEquals("1", dequeued);
+        // FIFO logic
+        Assert.assertEquals(0, queue.peek());
+
+        for (int i = 0; i < 10; i++) {
+            Assert.assertEquals(i, queue.dequeue());
+        }
+
         Assert.assertTrue(queue.isEmpty());
     }
 
-    @Test
-    public void enqueuePeek() {
-        Queue queue = new ArrayQueue(1);
-        Assert.assertTrue(queue.isEmpty());
-
-        queue.enqueue("1");
-        Assert.assertTrue(queue.isFull());
-
-        Object peeked = queue.peek();
-        Assert.assertEquals("1", peeked);
-        Assert.assertFalse(queue.isEmpty());
-    }
 
     @Test(expected = OverflowException.class)
-    public void overflow() {
+    public void Enqueue() {
         Queue queue = new ArrayQueue(1);
         queue.enqueue("1");
         queue.enqueue("2");
@@ -63,7 +59,7 @@ public class ArrayQueueTest {
     }
 
     @Test
-    public void wrapTwoTimes() {
+    public void wrapTwice() {
         Queue queue = new ArrayQueue(10);
 
         Assert.assertTrue(queue.isEmpty());
@@ -75,13 +71,13 @@ public class ArrayQueueTest {
         Assert.assertTrue(queue.isFull());
 
         for (int i = 0; i < 10; i++) {
-            Object o = queue.dequeue();
-            Assert.assertEquals(i, o);
+            Assert.assertEquals(i, queue.dequeue());
         }
 
         Assert.assertTrue(queue.isEmpty());
 
         // second cycle
+
         for (int i = 10; i < 20; i++) {
             queue.enqueue(i);
         }
@@ -89,8 +85,7 @@ public class ArrayQueueTest {
         Assert.assertTrue(queue.isFull());
 
         for (int i = 10; i < 20; i++) {
-            Object o = queue.dequeue();
-            Assert.assertEquals(i, o);
+            Assert.assertEquals(i, queue.dequeue());
         }
 
         Assert.assertTrue(queue.isEmpty());

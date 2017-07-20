@@ -12,28 +12,6 @@ public class LinkedQueueTest {
         Assert.assertTrue(queue.isEmpty());
     }
 
-    @Test
-    public void enqueueDequeue() {
-        Queue queue = new LinkedQueue();
-        queue.enqueue("1");
-        Assert.assertFalse(queue.isEmpty());
-
-        Object dequeued = queue.dequeue();
-        Assert.assertEquals("1", dequeued);
-        Assert.assertTrue(queue.isEmpty());
-    }
-
-    @Test
-    public void enqueuePeek() {
-        Queue queue = new LinkedQueue();
-        queue.enqueue("1");
-        Assert.assertFalse(queue.isEmpty());
-
-        Object peeked = queue.peek();
-        Assert.assertEquals("1", peeked);
-        Assert.assertFalse(queue.isEmpty());
-    }
-
     @Test(expected = UnderflowException.class)
     public void underflowDequeue() {
         Queue queue = new LinkedQueue();
@@ -56,9 +34,11 @@ public class LinkedQueueTest {
             queue.enqueue(i);
         }
 
+        // FIFO logic
+        Assert.assertEquals(0, queue.peek());
+
         for (int i = 0; i < 10; i++) {
-            Object o = queue.dequeue();
-            Assert.assertEquals(i, o);
+            Assert.assertEquals(i, queue.dequeue());
         }
 
         Assert.assertTrue(queue.isEmpty());

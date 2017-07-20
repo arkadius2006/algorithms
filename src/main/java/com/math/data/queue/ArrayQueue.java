@@ -1,5 +1,6 @@
 package com.math.data.queue;
 
+import com.math.data.IntUtils;
 import com.math.data.OverflowException;
 import com.math.data.UnderflowException;
 
@@ -43,7 +44,7 @@ public class ArrayQueue implements Queue {
         }
 
         data[rear] = o;
-        rear = cap(rear + 1);
+        rear = IntUtils.inc(rear, capacity);
         n++;
     }
 
@@ -54,7 +55,7 @@ public class ArrayQueue implements Queue {
         }
 
         Object dequeued = data[front];
-        front = cap(front + 1);
+        front = IntUtils.inc(front, capacity);
         n--;
         return dequeued;
     }
@@ -68,7 +69,4 @@ public class ArrayQueue implements Queue {
         return data[front];
     }
 
-    private int cap(int index) {
-        return index % capacity;
-    }
 }
