@@ -5,6 +5,9 @@ import com.math.data.UnderflowException;
 
 import java.util.Objects;
 
+/**
+ * D. Knuth. Art of Computer Programming, Vol 1: Section 2.2.4. Circular Lists.
+ */
 class LinkedQueue implements Queue {
     private Node rear;
 

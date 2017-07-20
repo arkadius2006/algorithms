@@ -6,6 +6,9 @@ import com.math.data.UnderflowException;
 
 import java.util.Objects;
 
+/**
+ * D. Knuth. Art of Computer Programming, Vol 1: Section 2.2.2. Sequential Allocations.
+ */
 class ArrayDeque implements Deque {
     private final int capacity;
     private final Object[] data;
