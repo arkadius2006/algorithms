@@ -1,6 +1,6 @@
-package com.math.data.old;
+package com.math.data.impl;
 
-public class IntUtils { // todo cover with tests
+class IntUtils { // todo cover with tests
 
     public static int inc(int i, int n) {
         checkModule(n);

@@ -3,9 +3,8 @@ package com.math.data.impl;
 import com.math.data.Deque;
 import com.math.data.OverflowException;
 import com.math.data.UnderflowException;
-import com.math.data.old.IntUtils;
 
-public class ArrayDeque implements Deque {
+class ArrayDeque implements Deque {
     private final int capacity;
     private final Object[] data;
     private int left;

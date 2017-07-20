@@ -6,7 +6,7 @@ import com.math.data.UnderflowException;
 
 import java.util.Objects;
 
-public class ArrayStack implements Stack {
+class ArrayStack implements Stack {
     private final Object[] data;
     private int top;
 
