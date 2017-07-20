@@ -1,4 +1,4 @@
-package com.math.data;
+package com.math.data.list;
 
 public class EmptyListException extends RuntimeException {
 }
