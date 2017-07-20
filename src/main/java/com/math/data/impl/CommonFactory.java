@@ -29,7 +29,7 @@ public class CommonFactory implements Factory {
 
     @Override
     public Deque newDeque() {
-        throw new UnsupportedOperationException(); // todo
+        return new LinkedDeque();
     }
 
     @Override
