@@ -28,7 +28,7 @@ public class LinkedDeque implements Deque {
     }
 
     @Override
-    public void enqueueLeft(Object o) throws OverflowException {
+    public void enqueueLeft(Object o) {
         Objects.requireNonNull(o);
 
         addRight(head, o);
@@ -45,7 +45,7 @@ public class LinkedDeque implements Deque {
     }
 
     @Override
-    public void enqueueRight(Object o) throws OverflowException {
+    public void enqueueRight(Object o) {
         Objects.requireNonNull(o);
 
         addLeft(head, o);
@@ -138,7 +138,7 @@ public class LinkedDeque implements Deque {
         return a.data;
     }
 
-    private class Node {
+    private static class Node {
         Node left;
         Node right;
         Object data;

@@ -1,24 +1,20 @@
 package com.math.data.impl;
 
-import com.math.data.OverflowException;
 import com.math.data.Queue;
 import com.math.data.UnderflowException;
 
 import java.util.Objects;
 
 class LinkedQueue implements Queue {
-    private Node tail;
-    private Node head;
-
+    private Node rear;
 
     public LinkedQueue() {
-        this.tail = null;
-        this.head = null;
+        rear = null;
     }
 
     @Override
     public boolean isEmpty() {
-        return head == null;
+        return rear == null;
     }
 
     @Override
@@ -27,18 +23,21 @@ class LinkedQueue implements Queue {
     }
 
     @Override
-    public void enqueue(Object o) throws OverflowException {
+    public void enqueue(Object o) {
         Objects.requireNonNull(o);
 
-        Node newTail = new Node();
-        newTail.data = o;
+        Node a = new Node();
+        a.data = o;
 
-        if (tail != null) {
-            newTail.tailOfHeadQueue = tail;
-            tail.headOfTailQueue = newTail;
-            tail = newTail;
+        if (isEmpty()) {
+            rear = a;
+            rear.next = rear;
         } else {
-            head = tail = newTail;
+            Node front = rear.next; // this is the key idea of this data structure: list is curcular
+
+            rear.next = a;
+            a.next = front;
+            rear = a;
         }
     }
 
@@ -48,17 +47,15 @@ class LinkedQueue implements Queue {
             throw new UnderflowException(this);
         }
 
-        Object dequeued = head.data;
+        Node front = rear.next; // again, this is the key idea of this data structure: list is curcular
 
-        head = head.headOfTailQueue;
-        if (head != null) {
-            head.tailOfHeadQueue = null;
+        if (front == rear) {
+            rear = null;
         } else {
-            tail = null;
+            rear.next = front.next;
         }
 
-
-        return dequeued;
+        return front.data;
     }
 
     @Override
@@ -67,12 +64,13 @@ class LinkedQueue implements Queue {
             throw new UnderflowException(this);
         }
 
-        return head.data;
+        Node front = rear.next;
+
+        return front.data;
     }
 
-    private class Node {
+    private static class Node {
         Object data;
-        Node tailOfHeadQueue;
-        Node headOfTailQueue;
+        Node next; // node that's closer to the rear, or the front if this is the rear (curcular list structure)
     }
 }
