@@ -1,4 +1,7 @@
-package com.math.data.queue;
+package com.math.data.impl;
+
+import com.math.data.Queue;
+import com.math.data.QueueFactory;
 
 public class CommonQueueFactory implements QueueFactory {
     @Override

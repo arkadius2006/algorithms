@@ -1,11 +1,17 @@
-package com.math.data.queue;
+package com.math.data.impl;
+
+import com.math.data.OverflowException;
+import com.math.data.Queue;
+import com.math.data.UnderflowException;
+import com.math.data.old.IntUtils;
 
 import java.util.Objects;
 
 public class ArrayQueue implements Queue {
     private final int capacity;
     private final Object[] data;
-    private int head;
+    private int front;
+    private int rear;
     private int n;
 
     public ArrayQueue(int capacity) {
@@ -15,7 +21,8 @@ public class ArrayQueue implements Queue {
 
         this.capacity = capacity;
         this.data = new Object[capacity];
-        this.head = 0;
+        this.front = 0;
+        this.rear = 0;
         this.n = 0;
     }
 
@@ -30,40 +37,37 @@ public class ArrayQueue implements Queue {
     }
 
     @Override
-    public void enqueue(Object o) throws QueueOverflowException {
+    public void enqueue(Object o) throws OverflowException {
         Objects.requireNonNull(o);
 
         if (isFull()) {
-            throw new QueueOverflowException(this);
+            throw new OverflowException(this);
         }
 
-        int index = cap(head + n);
-        data[index] = o;
+        data[rear] = o;
+        rear = IntUtils.inc(rear, capacity);
         n++;
     }
 
     @Override
-    public Object dequeue() throws QueueUnderflowException {
+    public Object dequeue() throws UnderflowException {
         if (isEmpty()) {
-            throw new QueueUnderflowException(this);
+            throw new UnderflowException(this);
         }
 
-        Object dequeued = data[head];
-        head = cap(head + 1);
+        Object dequeued = data[front];
+        front = IntUtils.inc(front, capacity);
         n--;
         return dequeued;
     }
 
     @Override
-    public Object peek() throws QueueUnderflowException {
+    public Object peek() throws UnderflowException {
         if (isEmpty()) {
-            throw new QueueUnderflowException(this);
+            throw new UnderflowException(this);
         }
 
-        return data[head];
+        return data[front];
     }
 
-    private int cap(int index) {
-        return index % capacity;
-    }
 }

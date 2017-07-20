@@ -1,5 +1,9 @@
 package com.math.data.stack;
 
+import com.math.data.OverflowException;
+import com.math.data.Stack;
+import com.math.data.UnderflowException;
+import com.math.data.impl.ArrayStack;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -15,46 +19,19 @@ public class ArrayStackTest {
         new ArrayStack(0);
     }
 
-
-    @Test
-    public void emptyStack() {
-        Stack stack = new ArrayStack(1);
-        Assert.assertTrue(stack.isEmpty());
-    }
-
-    @Test
-    public void fullStack() {
-        Stack stack = new ArrayStack(1);
-        stack.push("1");
-        Assert.assertTrue(stack.isFull());
-    }
-
-    @Test
-    public void pushPop() {
-        Stack stack = new ArrayStack(1);
-        stack.push("1");
-        Object popped = stack.pop();
-        Assert.assertEquals("1", popped);
-        Assert.assertTrue(stack.isEmpty());
-    }
-
-    @Test
-    public void pushTop() {
-        Stack stack = new ArrayStack(1);
-        stack.push("1");
-        Object ontop = stack.top();
-        Assert.assertEquals("1", ontop);
-        Assert.assertTrue(stack.isFull());
-        Assert.assertTrue(!stack.isEmpty());
-    }
-
-    @Test(expected = StackUnderflowException.class)
-    public void underflow() {
+    @Test(expected = UnderflowException.class)
+    public void underflowPop() {
         Stack stack = new ArrayStack(1);
         stack.pop();
     }
 
-    @Test(expected = StackOverflowException.class)
+    @Test(expected = UnderflowException.class)
+    public void underflowTop() {
+        Stack stack = new ArrayStack(1);
+        stack.top();
+    }
+
+    @Test(expected = OverflowException.class)
     public void overflow() {
         Stack stack = new ArrayStack(1);
         stack.push("1");
@@ -64,7 +41,6 @@ public class ArrayStackTest {
     @Test
     public void lifo() {
         Stack stack = new ArrayStack(10);
-
         Assert.assertTrue(stack.isEmpty());
 
         for (int i = 0; i < 10; i++) {
@@ -73,9 +49,11 @@ public class ArrayStackTest {
 
         Assert.assertTrue(stack.isFull());
 
+        // LIFO logic
+        Assert.assertEquals(9, stack.top());
+
         for (int i = 9; i >= 0; i--) {
-            Object o = stack.pop();
-            Assert.assertEquals(i, o);
+            Assert.assertEquals(i, stack.pop());
         }
 
         Assert.assertTrue(stack.isEmpty());

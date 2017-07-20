@@ -1,4 +1,8 @@
-package com.math.data.stack;
+package com.math.data.impl;
+
+import com.math.data.OverflowException;
+import com.math.data.Stack;
+import com.math.data.UnderflowException;
 
 import java.util.Objects;
 
@@ -20,7 +24,7 @@ public class LinkedStack implements Stack {
     }
 
     @Override
-    public void push(Object o) throws StackOverflowException {
+    public void push(Object o) throws OverflowException {
         Objects.requireNonNull(o);
         Top newTop = new Top();
         newTop.data = o;
@@ -29,9 +33,9 @@ public class LinkedStack implements Stack {
     }
 
     @Override
-    public Object pop() throws StackUnderflowException {
+    public Object pop() throws UnderflowException {
         if (isEmpty()) {
-            throw new StackUnderflowException(this);
+            throw new UnderflowException(this);
         }
 
         Object popped = top.data;
@@ -40,9 +44,9 @@ public class LinkedStack implements Stack {
     }
 
     @Override
-    public Object top() throws StackUnderflowException {
+    public Object top() throws UnderflowException {
         if (isEmpty()) {
-            throw new StackUnderflowException(this);
+            throw new UnderflowException(this);
         }
 
         return top.data;

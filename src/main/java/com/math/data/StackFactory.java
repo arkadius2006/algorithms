@@ -1,4 +1,4 @@
-package com.math.data.stack;
+package com.math.data;
 
 public interface StackFactory {
 
