@@ -1,6 +1,7 @@
-package com.math.data.queue;
+package com.math.data.impl;
 
 import com.math.data.OverflowException;
+import com.math.data.Queue;
 import com.math.data.UnderflowException;
 
 import java.util.Objects;

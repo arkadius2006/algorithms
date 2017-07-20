@@ -1,4 +1,4 @@
-package com.math.data.deque;
+package com.math.data;
 
 public interface DequeFactory {
 

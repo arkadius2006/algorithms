@@ -1,4 +1,4 @@
-package com.math.data;
+package com.math.data.old;
 
 public interface Domain {
 

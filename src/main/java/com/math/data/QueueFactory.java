@@ -1,4 +1,4 @@
-package com.math.data.queue;
+package com.math.data;
 
 public interface QueueFactory {
 

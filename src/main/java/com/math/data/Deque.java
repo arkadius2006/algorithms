@@ -1,4 +1,4 @@
-package com.math.data.deque;
+package com.math.data;
 
 import com.math.data.OverflowException;
 import com.math.data.UnderflowException;
