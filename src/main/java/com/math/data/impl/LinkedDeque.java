@@ -1,7 +1,6 @@
 package com.math.data.impl;
 
 import com.math.data.Deque;
-import com.math.data.OverflowException;
 import com.math.data.UnderflowException;
 
 import java.util.Objects;
@@ -12,14 +11,13 @@ public class LinkedDeque implements Deque {
     public LinkedDeque() {
         head = new Node();
         head.data = null;
-        head.left = head;
-        head.right = head;
+        head.prev = head;
+        head.next = head;
     }
 
     @Override
     public boolean isEmpty() {
-        return head.right == head;
-
+        return head.next == head;
     }
 
     @Override
@@ -31,116 +29,80 @@ public class LinkedDeque implements Deque {
     public void enqueueLeft(Object o) {
         Objects.requireNonNull(o);
 
-        addRight(head, o);
+        Node a = new Node();
+        a.data = o;
+
+        Node b = head.next;
+        head.next = a;
+        a.next = b;
+        b.prev = a;
+        a.prev = head;
     }
 
     @Override
     public Object dequeueLeft() throws UnderflowException {
-        return removeRight(head);
+        if (isEmpty()) {
+            throw new UnderflowException(this);
+        }
+
+        Node a = head.next;
+        Node b = a.next;
+        head.next = b;
+        b.prev = head;
+        return a.data;
     }
 
     @Override
     public Object peekLeft() throws UnderflowException {
-        return getRight(head);
+        if (isEmpty()) {
+            throw new UnderflowException(this);
+        }
+
+        Node a = head.next;
+        return a.data;
     }
 
     @Override
     public void enqueueRight(Object o) {
         Objects.requireNonNull(o);
 
-        addLeft(head, o);
+        Node a = new Node();
+        a.data = o;
+
+        Node b = head.prev;
+        head.prev = a;
+        a.prev = b;
+        b.next = a;
+        a.next = head;
     }
 
     @Override
     public Object dequeueRight() throws UnderflowException {
-        return removeLeft(head);
+        if (isEmpty()) {
+            throw new UnderflowException(this);
+        }
+
+        Node a = head.prev;
+        Node b = a.prev;
+        head.prev = b;
+        b.next = head;
+        return a.data;
+
     }
 
     @Override
     public Object peekRight() throws UnderflowException {
-        return getLeft(head);
-    }
-
-
-    private void addRight(Node n, Object o) {
-        Node a = new Node();
-        a.data = o;
-
-        Node b = n.right;
-
-        n.right = a;
-        a.right = b;
-
-        b.left = a;
-        a.left = n;
-    }
-
-    private void addLeft(Node n, Object o) {
-        Node a = new Node();
-        a.data = o;
-
-        Node b = n.left;
-
-        n.left = a;
-        a.left = b;
-
-        b.right = a;
-        a.right = n;
-    }
-
-    private Object removeRight(Node n) {
-        Node a = n.right;
-        if (a == n) {
+        if (isEmpty()) {
             throw new UnderflowException(this);
         }
 
-        Node b = a.right;
-
-        n.right = b;
-        b.left = n;
-
-        return a.data;
-
-    }
-
-    private Object removeLeft(Node n) {
-        Node a = n.left;
-
-        if (a == n) {
-            throw new UnderflowException(this);
-        }
-
-        Node b = a.left;
-
-        n.left = b;
-        b.right = n;
-
-        return a.data;
-    }
-
-    private Object getRight(Node n) {
-        Node a = n.right;
-
-        if (a == n) {
-            throw new UnderflowException(this);
-        }
-
-        return a.data;
-    }
-
-    private Object getLeft(Node n) {
-        Node a = n.left;
-
-        if (a == n) {
-            throw new UnderflowException(this);
-        }
-
+        Node a = head.prev;
         return a.data;
     }
 
     private static class Node {
-        Node left;
-        Node right;
         Object data;
+        Node prev;
+        Node next;
     }
 }
