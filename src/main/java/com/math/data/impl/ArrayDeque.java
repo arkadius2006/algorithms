@@ -4,6 +4,8 @@ import com.math.data.Deque;
 import com.math.data.OverflowException;
 import com.math.data.UnderflowException;
 
+import java.util.Objects;
+
 class ArrayDeque implements Deque {
     private final int capacity;
     private final Object[] data;
@@ -34,6 +36,8 @@ class ArrayDeque implements Deque {
 
     @Override
     public void enqueueLeft(Object o) throws OverflowException {
+        Objects.requireNonNull(o);
+
         if (isFull()) {
             throw new OverflowException(this);
         }
