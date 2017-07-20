@@ -1,5 +1,6 @@
 package com.math.data.stack;
 
+import com.math.data.UnderflowException;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -29,13 +30,13 @@ public class LinkedStackTest {
         Assert.assertFalse(stack.isEmpty());
     }
 
-    @Test(expected = StackUnderflowException.class)
+    @Test(expected = UnderflowException.class)
     public void underflowPop() {
         Stack stack = new LinkedStack();
         stack.pop();
     }
 
-    @Test(expected = StackUnderflowException.class)
+    @Test(expected = UnderflowException.class)
     public void underflowTop() {
         Stack stack = new LinkedStack();
         stack.top();

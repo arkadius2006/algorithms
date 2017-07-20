@@ -1,11 +1,14 @@
 package com.math.data.queue;
 
+import com.math.data.OverflowException;
+import com.math.data.UnderflowException;
+
 import java.util.Objects;
 
 public class ArrayQueue implements Queue {
     private final int capacity;
     private final Object[] data;
-    private int head;
+    private int head; // todo front
     private int n;
 
     public ArrayQueue(int capacity) {
@@ -30,11 +33,11 @@ public class ArrayQueue implements Queue {
     }
 
     @Override
-    public void enqueue(Object o) throws QueueOverflowException {
+    public void enqueue(Object o) throws OverflowException {
         Objects.requireNonNull(o);
 
         if (isFull()) {
-            throw new QueueOverflowException(this);
+            throw new OverflowException(this);
         }
 
         int index = cap(head + n);
@@ -43,9 +46,9 @@ public class ArrayQueue implements Queue {
     }
 
     @Override
-    public Object dequeue() throws QueueUnderflowException {
+    public Object dequeue() throws UnderflowException {
         if (isEmpty()) {
-            throw new QueueUnderflowException(this);
+            throw new UnderflowException(this);
         }
 
         Object dequeued = data[head];
@@ -55,9 +58,9 @@ public class ArrayQueue implements Queue {
     }
 
     @Override
-    public Object peek() throws QueueUnderflowException {
+    public Object peek() throws UnderflowException {
         if (isEmpty()) {
-            throw new QueueUnderflowException(this);
+            throw new UnderflowException(this);
         }
 
         return data[head];

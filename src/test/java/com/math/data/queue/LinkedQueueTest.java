@@ -1,8 +1,6 @@
 package com.math.data.queue;
 
-import com.math.data.queue.LinkedQueue;
-import com.math.data.queue.Queue;
-import com.math.data.queue.QueueUnderflowException;
+import com.math.data.UnderflowException;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -36,13 +34,13 @@ public class LinkedQueueTest {
         Assert.assertFalse(queue.isEmpty());
     }
 
-    @Test(expected = QueueUnderflowException.class)
+    @Test(expected = UnderflowException.class)
     public void underflowDequeue() {
         Queue queue = new LinkedQueue();
         queue.dequeue();
     }
 
-    @Test(expected = QueueUnderflowException.class)
+    @Test(expected = UnderflowException.class)
     public void underflowPeek() {
         Queue queue = new LinkedQueue();
         queue.peek();

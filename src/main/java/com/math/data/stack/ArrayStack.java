@@ -1,10 +1,13 @@
 package com.math.data.stack;
 
+import com.math.data.OverflowException;
+import com.math.data.UnderflowException;
+
 import java.util.Objects;
 
 public class ArrayStack implements Stack {
     private final Object[] data;
-    private int count;
+    private int count; // todo this is called stack pointer, TOP
 
     public ArrayStack(int capacity) {
         if (capacity <= 0) {
@@ -26,11 +29,11 @@ public class ArrayStack implements Stack {
     }
 
     @Override
-    public void push(Object o) throws StackOverflowException {
+    public void push(Object o) throws OverflowException {
         Objects.requireNonNull(o);
 
         if (isFull()) {
-            throw new StackOverflowException(this);
+            throw new OverflowException(this);
         }
 
         data[count] = o;
@@ -38,9 +41,9 @@ public class ArrayStack implements Stack {
     }
 
     @Override
-    public Object pop() throws StackUnderflowException {
+    public Object pop() throws UnderflowException {
         if (isEmpty()) {
-            throw new StackUnderflowException(this);
+            throw new UnderflowException(this);
         }
 
         --count;
@@ -48,9 +51,9 @@ public class ArrayStack implements Stack {
     }
 
     @Override
-    public Object top() throws StackUnderflowException {
+    public Object top() throws UnderflowException {
         if (isEmpty()) {
-            throw new StackUnderflowException(this);
+            throw new UnderflowException(this);
         }
 
         return data[count - 1];

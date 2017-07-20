@@ -1,14 +1,17 @@
 package com.math.data.queue;
 
+import com.math.data.OverflowException;
+import com.math.data.UnderflowException;
+
 public interface Queue {
 
     boolean isEmpty();
 
     boolean isFull();
 
-    void enqueue(Object o) throws QueueOverflowException;
+    void enqueue(Object o) throws OverflowException;
 
-    Object dequeue() throws QueueUnderflowException;
+    Object dequeue() throws UnderflowException;
 
-    Object peek() throws QueueUnderflowException;
+    Object peek() throws UnderflowException;
 }

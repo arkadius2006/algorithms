@@ -16,7 +16,7 @@ public interface List {
 
     void addFirst(Object newFirst); // enqueue
 
-    void removeFirst() throws EmptyListException; // dequeue
+    void removeFirst() throws EmptyListException; // deque
 
     // todo consider reduce number of operations, e.g. remove returns value etc
 
@@ -32,7 +32,7 @@ public interface List {
 
     // todo add vs offer (push, enqueue)
 
-    // todo remove vs poll (pop, dequeue)
+    // todo remove vs poll (pop, deque)
 
     // todo get vs peek
 }

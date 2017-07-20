@@ -1,5 +1,7 @@
 package com.math.data.stack;
 
+import com.math.data.OverflowException;
+import com.math.data.UnderflowException;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -48,13 +50,13 @@ public class ArrayStackTest {
         Assert.assertTrue(!stack.isEmpty());
     }
 
-    @Test(expected = StackUnderflowException.class)
+    @Test(expected = UnderflowException.class)
     public void underflow() {
         Stack stack = new ArrayStack(1);
         stack.pop();
     }
 
-    @Test(expected = StackOverflowException.class)
+    @Test(expected = OverflowException.class)
     public void overflow() {
         Stack stack = new ArrayStack(1);
         stack.push("1");

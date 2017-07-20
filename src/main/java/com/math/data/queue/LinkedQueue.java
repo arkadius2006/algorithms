@@ -1,10 +1,13 @@
 package com.math.data.queue;
 
+import com.math.data.OverflowException;
+import com.math.data.UnderflowException;
+
 import java.util.Objects;
 
 public class LinkedQueue implements Queue {
-    private Node tail; // .headOfTailQueue == null
-    private Node head; // .tailOfHeadQueue == null
+    private Node tail;
+    private Node head;
 
 
     public LinkedQueue() {
@@ -23,7 +26,7 @@ public class LinkedQueue implements Queue {
     }
 
     @Override
-    public void enqueue(Object o) throws QueueOverflowException {
+    public void enqueue(Object o) throws OverflowException {
         Objects.requireNonNull(o);
 
         Node newTail = new Node();
@@ -39,9 +42,9 @@ public class LinkedQueue implements Queue {
     }
 
     @Override
-    public Object dequeue() throws QueueUnderflowException {
+    public Object dequeue() throws UnderflowException {
         if (isEmpty()) {
-            throw new QueueUnderflowException(this);
+            throw new UnderflowException(this);
         }
 
         Object dequeued = head.data;
@@ -58,9 +61,9 @@ public class LinkedQueue implements Queue {
     }
 
     @Override
-    public Object peek() throws QueueUnderflowException {
+    public Object peek() throws UnderflowException {
         if (isEmpty()) {
-            throw new QueueUnderflowException(this);
+            throw new UnderflowException(this);
         }
 
         return head.data;

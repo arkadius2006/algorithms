@@ -1,5 +1,7 @@
 package com.math.data.queue;
 
+import com.math.data.OverflowException;
+import com.math.data.UnderflowException;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -41,20 +43,20 @@ public class ArrayQueueTest {
         Assert.assertFalse(queue.isEmpty());
     }
 
-    @Test(expected = QueueOverflowException.class)
+    @Test(expected = OverflowException.class)
     public void overflow() {
         Queue queue = new ArrayQueue(1);
         queue.enqueue("1");
         queue.enqueue("2");
     }
 
-    @Test(expected = QueueUnderflowException.class)
+    @Test(expected = UnderflowException.class)
     public void underflowDequeue() {
         Queue queue = new ArrayQueue(1);
         queue.dequeue();
     }
 
-    @Test(expected = QueueUnderflowException.class)
+    @Test(expected = UnderflowException.class)
     public void underflowPeek() {
         Queue queue = new ArrayQueue(1);
         queue.peek();
