@@ -1,20 +1,23 @@
 package com.math.data.deque;
 
+import com.math.data.OverflowException;
+import com.math.data.UnderflowException;
+
 public interface Deque {
 
     boolean isEmpty();
 
     boolean isFull();
 
-    void enqueueHead(Object o);
+    void enqueueLeft(Object o) throws OverflowException;
 
-    Object dequeueHead();
+    Object dequeueLeft() throws UnderflowException;
 
-    Object peekHead();
+    Object peekLeft() throws UnderflowException;
 
-    void enqueueTail(Object o);
+    void enqueueRight(Object o) throws OverflowException;
 
-    Object dequeueTail();
+    Object dequeueRight() throws UnderflowException;
 
-    Object peekTail();
+    Object peekRight() throws UnderflowException;
 }
