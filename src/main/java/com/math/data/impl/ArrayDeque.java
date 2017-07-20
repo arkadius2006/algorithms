@@ -100,4 +100,8 @@ class ArrayDeque implements Deque {
         return data[index];
     }
 
+    @Override
+    public String toString() {
+        return getClass().getSimpleName();
+    }
 }

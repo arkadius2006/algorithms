@@ -73,4 +73,9 @@ class LinkedQueue implements Queue {
         Object data;
         Node next; // node that's closer to the rear, or the front if this is the rear (curcular list structure)
     }
+
+    @Override
+    public String toString() {
+        return getClass().getSimpleName();
+    }
 }

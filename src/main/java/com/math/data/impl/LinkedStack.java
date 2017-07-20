@@ -57,4 +57,9 @@ class LinkedStack implements Stack {
         Object data;
         Node next; // the node below, or null if this is bottom
     }
+
+    @Override
+    public String toString() {
+        return getClass().getSimpleName();
+    }
 }

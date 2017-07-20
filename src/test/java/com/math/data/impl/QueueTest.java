@@ -4,44 +4,55 @@ import com.math.data.Queue;
 import com.math.data.UnderflowException;
 import org.junit.Assert;
 import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.junit.runners.Parameterized;
 
-public class LinkedQueueTest {
+import static org.junit.runners.Parameterized.Parameter;
+
+
+@RunWith(Parameterized.class)
+public class QueueTest {
+
+    public final static int N = 10;
+
+    @Parameterized.Parameters(name = "{0}")
+    public static Object[] queues() {
+        return new Object[]{
+                new ArrayQueue(N),
+                new LinkedQueue()
+        };
+    }
+
+    @Parameter
+    public Queue queue;
 
     @Test
     public void empty() {
-        Queue queue = new LinkedQueue();
         Assert.assertTrue(queue.isEmpty());
     }
 
     @Test(expected = UnderflowException.class)
     public void underflowDequeue() {
-        Queue queue = new LinkedQueue();
         queue.dequeue();
     }
 
     @Test(expected = UnderflowException.class)
     public void underflowPeek() {
-        Queue queue = new LinkedQueue();
         queue.peek();
     }
 
     @Test
     public void fifo() {
-        Queue queue = new LinkedQueue();
-
-        Assert.assertTrue(queue.isEmpty());
-
-        for (int i = 0; i < 10; i++) {
+        for (int i = 0; i < N; i++) {
             queue.enqueue(i);
         }
 
         // FIFO logic
         Assert.assertEquals(0, queue.peek());
 
-        for (int i = 0; i < 10; i++) {
+        for (int i = 0; i < N; i++) {
             Assert.assertEquals(i, queue.dequeue());
         }
-
-        Assert.assertTrue(queue.isEmpty());
     }
+
 }

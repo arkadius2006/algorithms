@@ -105,4 +105,10 @@ public class LinkedDeque implements Deque {
         Node prev;
         Node next;
     }
+
+    @Override
+    public String toString() {
+        return getClass().getSimpleName();
+    }
+
 }

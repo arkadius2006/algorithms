@@ -2,7 +2,6 @@ package com.math.data.impl;
 
 import com.math.data.OverflowException;
 import com.math.data.Queue;
-import com.math.data.UnderflowException;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -18,45 +17,11 @@ public class ArrayQueueTest {
         new ArrayQueue(0);
     }
 
-    @Test
-    public void fifo() {
-        Queue queue = new ArrayQueue(10);
-        Assert.assertTrue(queue.isEmpty());
-
-        for (int i = 0; i < 10; i++) {
-            queue.enqueue(i);
-        }
-
-        Assert.assertTrue(queue.isFull());
-
-        // FIFO logic
-        Assert.assertEquals(0, queue.peek());
-
-        for (int i = 0; i < 10; i++) {
-            Assert.assertEquals(i, queue.dequeue());
-        }
-
-        Assert.assertTrue(queue.isEmpty());
-    }
-
-
     @Test(expected = OverflowException.class)
-    public void Enqueue() {
+    public void enqueue() {
         Queue queue = new ArrayQueue(1);
         queue.enqueue("1");
         queue.enqueue("2");
-    }
-
-    @Test(expected = UnderflowException.class)
-    public void underflowDequeue() {
-        Queue queue = new ArrayQueue(1);
-        queue.dequeue();
-    }
-
-    @Test(expected = UnderflowException.class)
-    public void underflowPeek() {
-        Queue queue = new ArrayQueue(1);
-        queue.peek();
     }
 
     @Test
