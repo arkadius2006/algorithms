@@ -1,9 +1,9 @@
 package com.math.data.impl;
 
 import com.math.data.Deque;
-import com.math.data.old.IntUtils;
 import com.math.data.OverflowException;
 import com.math.data.UnderflowException;
+import com.math.data.old.IntUtils;
 
 public class ArrayDeque implements Deque {
     private final int capacity;

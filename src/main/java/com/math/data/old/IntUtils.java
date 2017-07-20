@@ -17,7 +17,7 @@ public class IntUtils { // todo cover with tests
     }
 
     private static void checkModule(int n) {
-        if (n <= 0){
+        if (n <= 0) {
             throw new IllegalArgumentException("Divisor canot be negative or zero: " + n);
         }
     }
