@@ -1,8 +1,7 @@
-package com.math.data.queue;
+package com.math.data.impl;
 
 import com.math.data.Queue;
 import com.math.data.UnderflowException;
-import com.math.data.impl.LinkedQueue;
 import org.junit.Assert;
 import org.junit.Test;
 

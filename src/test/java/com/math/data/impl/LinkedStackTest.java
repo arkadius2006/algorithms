@@ -1,8 +1,7 @@
-package com.math.data.stack;
+package com.math.data.impl;
 
 import com.math.data.Stack;
 import com.math.data.UnderflowException;
-import com.math.data.impl.LinkedStack;
 import org.junit.Assert;
 import org.junit.Test;
 

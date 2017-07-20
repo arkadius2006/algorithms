@@ -1,9 +1,8 @@
-package com.math.data.deque;
+package com.math.data.impl;
 
 import com.math.data.Deque;
 import com.math.data.OverflowException;
 import com.math.data.UnderflowException;
-import com.math.data.impl.ArrayDeque;
 import org.junit.Assert;
 import org.junit.Test;
 

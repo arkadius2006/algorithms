@@ -6,7 +6,7 @@ import com.math.data.UnderflowException;
 
 import java.util.Objects;
 
-public class LinkedQueue implements Queue {
+class LinkedQueue implements Queue {
     private Node tail;
     private Node head;
 

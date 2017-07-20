@@ -3,11 +3,10 @@ package com.math.data.impl;
 import com.math.data.OverflowException;
 import com.math.data.Queue;
 import com.math.data.UnderflowException;
-import com.math.data.old.IntUtils;
 
 import java.util.Objects;
 
-public class ArrayQueue implements Queue {
+class ArrayQueue implements Queue {
     private final int capacity;
     private final Object[] data;
     private int front;

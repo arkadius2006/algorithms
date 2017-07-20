@@ -1,6 +1,5 @@
-package com.math.data;
+package com.math.data.impl;
 
-import com.math.data.old.IntUtils;
 import org.junit.Assert;
 import org.junit.Test;
 

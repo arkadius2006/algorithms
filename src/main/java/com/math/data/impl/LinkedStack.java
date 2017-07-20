@@ -6,7 +6,7 @@ import com.math.data.UnderflowException;
 
 import java.util.Objects;
 
-public class LinkedStack implements Stack {
+class LinkedStack implements Stack {
     private Top top;
 
     public LinkedStack() {
