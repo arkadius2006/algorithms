@@ -7,7 +7,7 @@ import java.util.Objects;
 
 public class ArrayStack implements Stack {
     private final Object[] data;
-    private int count; // todo this is called stack pointer, TOP
+    private int top;
 
     public ArrayStack(int capacity) {
         if (capacity <= 0) {
@@ -15,17 +15,17 @@ public class ArrayStack implements Stack {
         }
 
         this.data = new Object[capacity];
-        this.count = 0;
+        this.top = 0;
     }
 
     @Override
     public boolean isEmpty() {
-        return count == 0;
+        return top == 0;
     }
 
     @Override
     public boolean isFull() {
-        return count == data.length;
+        return top == data.length;
     }
 
     @Override
@@ -36,8 +36,8 @@ public class ArrayStack implements Stack {
             throw new OverflowException(this);
         }
 
-        data[count] = o;
-        count++;
+        data[top] = o;
+        top++;
     }
 
     @Override
@@ -46,8 +46,8 @@ public class ArrayStack implements Stack {
             throw new UnderflowException(this);
         }
 
-        --count;
-        return data[count];
+        --top;
+        return data[top];
     }
 
     @Override
@@ -56,6 +56,6 @@ public class ArrayStack implements Stack {
             throw new UnderflowException(this);
         }
 
-        return data[count - 1];
+        return data[top - 1];
     }
 }
