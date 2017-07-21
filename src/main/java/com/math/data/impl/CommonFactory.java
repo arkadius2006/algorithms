@@ -38,4 +38,49 @@ public class CommonFactory implements Factory {
     public ListNode newHeadListNode() {
         return LinkedListNode.newHeadListNode();
     }
+
+    @Override
+    public ByteStack newByteStack(int capacity) {
+        throw new UnsupportedOperationException();
+    }
+
+    @Override
+    public IntStack newIntStack(int capacity) {
+        throw new UnsupportedOperationException();
+    }
+
+    @Override
+    public LongStack newLongStack(int capacity) {
+        throw new UnsupportedOperationException();
+    }
+
+    @Override
+    public ByteQueue newByteQueue(int capacity) {
+        throw new UnsupportedOperationException();
+    }
+
+    @Override
+    public IntQueue newIntQueue(int capacity) {
+        throw new UnsupportedOperationException();
+    }
+
+    @Override
+    public LongQueue newLongQueue(int capacity) {
+        throw new UnsupportedOperationException();
+    }
+
+    @Override
+    public ByteDeque newByteDeque(int capacity) {
+        throw new UnsupportedOperationException();
+    }
+
+    @Override
+    public IntDeque newIntDeque(int capacity) {
+        throw new UnsupportedOperationException();
+    }
+
+    @Override
+    public LongDeque newLongDeque(int capacity) {
+        throw new UnsupportedOperationException();
+    }
 }

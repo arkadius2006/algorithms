@@ -39,4 +39,25 @@ public interface Factory {
      */
     ListNode newHeadListNode();
 
+    // ===
+    // primitive versions for byte, int, long
+    // ===
+
+    ByteStack newByteStack(int capacity);
+
+    IntStack newIntStack(int capacity);
+
+    LongStack newLongStack(int capacity);
+
+    ByteQueue newByteQueue(int capacity);
+
+    IntQueue newIntQueue(int capacity);
+
+    LongQueue newLongQueue(int capacity);
+
+    ByteDeque newByteDeque(int capacity);
+
+    IntDeque newIntDeque(int capacity);
+
+    LongDeque newLongDeque(int capacity);
 }
