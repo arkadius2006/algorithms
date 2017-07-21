@@ -35,7 +35,7 @@ public class CommonFactory implements Factory {
     }
 
     @Override
-    public List newList() {
-        throw new UnsupportedOperationException();
+    public ListNode newHeadListNode() {
+        return LinkedListNode.newHeadListNode();
     }
 }
