@@ -34,4 +34,9 @@ public interface Factory {
      */
     Deque newDeque(int capacity);
 
+    /**
+     * List.
+     */
+    List newList();
+
 }
