@@ -3,7 +3,7 @@ package com.math.data.impl;
 import com.math.data.EmptyListException;
 import com.math.data.HeadContainsNoDataListException;
 import com.math.data.ListNode;
-import com.math.data.StaleNodeException;
+import com.math.data.StaleNodeListException;
 
 import java.util.Objects;
 
@@ -145,7 +145,7 @@ class LinkedListNode implements ListNode {
 
     private void checkStale() {
         if (isStale) {
-            throw new StaleNodeException();
+            throw new StaleNodeListException();
         }
     }
 }
