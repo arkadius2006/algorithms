@@ -46,7 +46,7 @@ class LinkedListNode implements ListNode {
     }
 
     @Override
-    public boolean isCircle() {
+    public boolean isListEmpty() {
         checkStale();
         return this.nextNode == this;
     }
