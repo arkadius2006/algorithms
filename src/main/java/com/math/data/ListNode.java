@@ -8,7 +8,7 @@ import com.math.data.impl.ListException;
 public interface ListNode {
 
     /**
-     * Trivial list consists of one node: head. E.g. trivial list contains no data nodes.
+     * Trivial list consists of only one node: head. E.g. trivial list contains no data nodes.
      */
     boolean isListTrivial();
 
