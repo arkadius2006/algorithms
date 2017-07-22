@@ -8,16 +8,6 @@ import com.math.data.impl.ListException;
 public interface ListNode {
 
     /**
-     * @see com.math.data.HeadListNode
-     */
-    boolean isHeadNode();
-
-    /**
-     * @see com.math.data.DataListNode
-     */
-    boolean isDataNode();
-
-    /**
      * Each node in the list is aware whther it is the only node in list (which implies it is head node).
      */
     boolean isListEmpty();

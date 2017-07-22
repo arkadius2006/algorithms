@@ -1,5 +1,6 @@
 package com.math.data.impl;
 
+import com.math.data.HeadListNode;
 import com.math.data.ListNode;
 import com.math.data.StaleNodeListException;
 
@@ -64,7 +65,7 @@ abstract class ImplListNode implements ListNode {
             throw new ListException(this, "List is empty");
         }
 
-        if (a.isHeadNode()) {
+        if (a instanceof HeadListNode) {
             throw new ListException(this, "Cannot remove next node since it's head");
         }
 
@@ -84,7 +85,7 @@ abstract class ImplListNode implements ListNode {
             throw new ListException(this, "List is empty");
         }
 
-        if (a.isHeadNode()) {
+        if (a instanceof HeadListNode) {
             throw new ListException(this, "Cannot delete prev node since it's head");
         }
 

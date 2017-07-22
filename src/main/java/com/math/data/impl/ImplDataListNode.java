@@ -13,16 +13,6 @@ class ImplDataListNode extends ImplListNode implements DataListNode {
     }
 
     @Override
-    public boolean isHeadNode() {
-        return false;
-    }
-
-    @Override
-    public boolean isDataNode() {
-        return true;
-    }
-
-    @Override
     public Object getData() {
         checkStale();
         return data;

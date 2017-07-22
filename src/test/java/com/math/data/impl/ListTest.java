@@ -18,7 +18,6 @@ public class ListTest {
     @Test
     public void emptyList() {
         Assert.assertTrue(head.isListEmpty());
-        Assert.assertTrue(head.isHeadNode());
 
         Assert.assertEquals(head, head.next());
         Assert.assertEquals(head, head.next());
