@@ -1,6 +1,7 @@
 package com.math.data.impl;
 
 import com.math.data.HeadListNode;
+import com.math.data.ListException;
 import com.math.data.ListNode;
 import com.math.data.StaleNodeListException;
 

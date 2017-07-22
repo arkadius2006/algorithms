@@ -1,6 +1,4 @@
-package com.math.data.impl;
-
-import com.math.data.ListNode;
+package com.math.data;
 
 public class ListException extends RuntimeException {
     private final ListNode node;
