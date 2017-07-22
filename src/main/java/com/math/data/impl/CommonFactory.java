@@ -1,9 +1,6 @@
 package com.math.data.impl;
 
-import com.math.data.Deque;
-import com.math.data.Factory;
-import com.math.data.Queue;
-import com.math.data.Stack;
+import com.math.data.*;
 
 public class CommonFactory implements Factory {
 
@@ -36,4 +33,10 @@ public class CommonFactory implements Factory {
     public Deque newDeque(int capacity) {
         return new ArrayDeque(capacity);
     }
+
+    @Override
+    public HeadListNode newHeadListNode() {
+        return new ImplHeadListNode();
+    }
+
 }
