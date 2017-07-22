@@ -37,6 +37,6 @@ public interface Factory {
     /**
      * List.
      */
-    ListNode newHeadListNode();
+    HeadListNode newHeadListNode();
 
 }
