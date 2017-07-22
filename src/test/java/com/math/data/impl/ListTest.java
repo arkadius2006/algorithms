@@ -1,17 +1,18 @@
 package com.math.data.impl;
 
-import com.math.data.ListNode;
+import com.math.data.DataListNode;
+import com.math.data.HeadListNode;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
 public class ListTest {
 
-    ListNode head;
+    HeadListNode head;
 
     @Before
     public void setUp() {
-        head = LinkedListNode.newHeadListNode();
+        head = new ImplHeadListNode();
     }
 
     @Test
@@ -23,17 +24,12 @@ public class ListTest {
         Assert.assertEquals(head, head.next());
     }
 
-    @Test(expected = RuntimeException.class)
-    public void emptyListHeadGet() {
-        head.get();
-    }
-
     @Test
     public void insertHeadNext() {
         head.insertNext("1");
 
-        ListNode first = head.next();
-        Assert.assertEquals("1", first.get());
+        DataListNode first = (DataListNode) head.next();
+        Assert.assertEquals("1", first.getData());
 
         Assert.assertEquals(head, first.next());
         Assert.assertEquals(first, head.prev());
@@ -44,8 +40,8 @@ public class ListTest {
     public void insertHeadPrev() {
         head.insertPrev("1");
 
-        ListNode last = head.prev();
-        Assert.assertEquals("1", last.get());
+        DataListNode last = (DataListNode) head.prev();
+        Assert.assertEquals("1", last.getData());
 
         Assert.assertEquals(head, last.prev());
         Assert.assertEquals(last, head.next());
@@ -67,6 +63,4 @@ public class ListTest {
         head.removePrev();
         Assert.assertTrue(head.isListEmpty());
     }
-
-
 }

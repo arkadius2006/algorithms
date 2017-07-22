@@ -36,7 +36,7 @@ public class CommonFactory implements Factory {
 
     @Override
     public ListNode newHeadListNode() {
-        return LinkedListNode.newHeadListNode();
+        return new ImplHeadListNode();
     }
 
 }

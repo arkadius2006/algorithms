@@ -1,4 +1,10 @@
 package com.math.data;
 
-public class StaleNodeListException extends RuntimeException { // todo text + node
+import com.math.data.impl.ListException;
+
+public class StaleNodeListException extends ListException {
+
+    public StaleNodeListException(ListNode node) {
+        super(node, "Node is stale: " + node);
+    }
 }
