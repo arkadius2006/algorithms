@@ -17,7 +17,7 @@ public class ListTest {
 
     @Test
     public void emptyList() {
-        Assert.assertTrue(head.isListEmpty());
+        Assert.assertTrue(head.isListTrivial());
 
         Assert.assertEquals(head, head.next());
         Assert.assertEquals(head, head.next());
@@ -52,7 +52,7 @@ public class ListTest {
         head.insertNext("1");
 
         head.removeNext();
-        Assert.assertTrue(head.isListEmpty());
+        Assert.assertTrue(head.isListTrivial());
     }
 
     @Test
@@ -60,6 +60,6 @@ public class ListTest {
         head.insertPrev("1");
 
         head.removePrev();
-        Assert.assertTrue(head.isListEmpty());
+        Assert.assertTrue(head.isListTrivial());
     }
 }

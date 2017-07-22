@@ -16,7 +16,7 @@ abstract class ImplListNode implements ListNode {
     }
 
     @Override
-    public boolean isListEmpty() {
+    public boolean isListTrivial() {
         checkStale();
         return this.nextNode == this;
     }

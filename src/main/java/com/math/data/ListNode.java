@@ -8,9 +8,9 @@ import com.math.data.impl.ListException;
 public interface ListNode {
 
     /**
-     * Each node in the list is aware whther it is the only node in list (which implies it is head node).
+     * Trivial list consists of one node: head. E.g. trivial list contains no data nodes.
      */
-    boolean isListEmpty();
+    boolean isListTrivial();
 
     /**
      * Returns next node in node circle, it could be either data node or head node.
