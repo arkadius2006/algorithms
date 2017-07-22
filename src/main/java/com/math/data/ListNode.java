@@ -1,7 +1,5 @@
 package com.math.data;
 
-import com.math.data.impl.ListException;
-
 /**
  * All interface method could throw {@link com.math.data.StaleNodeListException}.
  */
