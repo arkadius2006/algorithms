@@ -1,5 +1,9 @@
 package com.math.data;
 
+/**
+ * Underflow exception is thrown when one attempts to extract item
+ * from empty collection.
+ */
 public class UnderflowException extends RuntimeException {
     private final Object container;
 
@@ -9,6 +13,6 @@ public class UnderflowException extends RuntimeException {
 
     @Override
     public String toString() {
-        return "Undeflow: " + container;
+        return "Underflow: " + container;
     }
 }

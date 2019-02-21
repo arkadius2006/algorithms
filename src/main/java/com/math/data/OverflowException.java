@@ -1,5 +1,9 @@
 package com.math.data;
 
+/**
+ * Overflow exception is thrown when one attempts to add item to collection
+ * which is already full.
+ */
 public class OverflowException extends RuntimeException {
     private final Object container;
 
@@ -9,6 +13,6 @@ public class OverflowException extends RuntimeException {
 
     @Override
     public String toString() {
-        return "Overlow: " + container;
+        return "Overflow: " + container;
     }
 }
