@@ -1,7 +1,7 @@
 package com.math.data.impl;
 
 import com.math.data.Deque;
-import com.math.data.UnderflowException;
+import com.knuth.UnderflowException;
 
 import java.util.Objects;
 

@@ -1,4 +1,4 @@
-package com.math.data;
+package com.knuth;
 
 /**
  * Underflow exception is thrown when one attempts to extract item

@@ -1,14 +1,11 @@
-package com.math.data.impl;
-
-import com.math.data.Stack;
-import com.math.data.UnderflowException;
+package com.knuth;
 
 import java.util.Objects;
 
 /**
  * D. Knuth. Art of Computer Programming, Vol 1: Section 2.2.3. Linked Allocations.
  */
-class LinkedStack implements Stack {
+public class LinkedStack implements Stack {
     private Node top;
 
     public LinkedStack() {

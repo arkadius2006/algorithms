@@ -1,5 +1,8 @@
 package com.math.data.impl;
 
+import com.knuth.ArrayStack;
+import com.knuth.LinkedStack;
+import com.knuth.Stack;
 import com.math.data.*;
 
 public class CommonFactory implements Factory {

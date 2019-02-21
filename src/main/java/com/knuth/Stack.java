@@ -1,4 +1,4 @@
-package com.math.data;
+package com.knuth;
 
 /**
  * A stack is a linear list for which all insertions and deletions (and accesses) are made at one end of the list.

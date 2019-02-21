@@ -1,7 +1,8 @@
-package com.math.data.impl;
+package com.knuth;
 
-import com.math.data.OverflowException;
-import com.math.data.Stack;
+import com.knuth.ArrayStack;
+import com.knuth.OverflowException;
+import com.knuth.Stack;
 import org.junit.Test;
 
 public class ArrayStackTest {

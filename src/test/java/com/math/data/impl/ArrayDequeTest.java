@@ -1,7 +1,7 @@
 package com.math.data.impl;
 
 import com.math.data.Deque;
-import com.math.data.OverflowException;
+import com.knuth.OverflowException;
 import org.junit.Test;
 
 

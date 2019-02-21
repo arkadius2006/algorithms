@@ -1,5 +1,7 @@
 package com.math.data;
 
+import com.knuth.Stack;
+
 public interface Factory {
 
 

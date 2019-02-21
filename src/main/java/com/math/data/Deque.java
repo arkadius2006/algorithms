@@ -1,5 +1,8 @@
 package com.math.data;
 
+import com.knuth.OverflowException;
+import com.knuth.UnderflowException;
+
 /**
  * Deque is a linear list for which all insertions and deletions (and acceses) are made at the ends of the list.
  * <p/>

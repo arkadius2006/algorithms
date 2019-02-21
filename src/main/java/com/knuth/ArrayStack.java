@@ -1,15 +1,11 @@
-package com.math.data.impl;
-
-import com.math.data.OverflowException;
-import com.math.data.Stack;
-import com.math.data.UnderflowException;
+package com.knuth;
 
 import java.util.Objects;
 
 /**
  * D. Knuth. Art of Computer Programming, Vol 1: Section 2.2.2. Sequential Allocations.
  */
-class ArrayStack implements Stack {
+public class ArrayStack implements Stack {
     private final Object[] data;
     private int top;
 

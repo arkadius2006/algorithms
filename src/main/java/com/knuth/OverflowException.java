@@ -1,4 +1,4 @@
-package com.math.data;
+package com.knuth;
 
 /**
  * Overflow exception is thrown when one attempts to add item to collection
