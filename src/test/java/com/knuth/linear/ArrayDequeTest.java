@@ -1,5 +1,8 @@
-package com.knuth;
+package com.knuth.linear;
 
+import com.knuth.linear.Deque;
+import com.knuth.linear.OverflowException;
+import com.knuth.linear.sequential.ArrayDeque;
 import org.junit.Test;
 
 

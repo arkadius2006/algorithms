@@ -1,4 +1,4 @@
-package com.knuth;
+package com.knuth.linear;
 
 /**
  * Overflow exception is thrown when one attempts to add item to collection

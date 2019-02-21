@@ -1,5 +1,9 @@
-package com.knuth;
+package com.knuth.linear;
 
+import com.knuth.linear.Queue;
+import com.knuth.linear.UnderflowException;
+import com.knuth.linear.linked.LinkedQueue;
+import com.knuth.linear.sequential.ArrayQueue;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;

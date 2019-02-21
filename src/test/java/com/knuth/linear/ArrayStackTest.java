@@ -1,8 +1,8 @@
-package com.knuth;
+package com.knuth.linear;
 
-import com.knuth.ArrayStack;
-import com.knuth.OverflowException;
-import com.knuth.Stack;
+import com.knuth.linear.OverflowException;
+import com.knuth.linear.Stack;
+import com.knuth.linear.sequential.ArrayStack;
 import org.junit.Test;
 
 public class ArrayStackTest {

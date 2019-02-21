@@ -1,5 +1,9 @@
-package com.knuth;
+package com.knuth.linear;
 
+import com.knuth.linear.Stack;
+import com.knuth.linear.UnderflowException;
+import com.knuth.linear.linked.LinkedStack;
+import com.knuth.linear.sequential.ArrayStack;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;

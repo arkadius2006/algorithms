@@ -1,6 +1,6 @@
-package com.knuth;
+package com.knuth.linear;
 
-import com.knuth.IntUtils;
+import com.knuth.linear.sequential.IntUtils;
 import org.junit.Assert;
 import org.junit.Test;
 

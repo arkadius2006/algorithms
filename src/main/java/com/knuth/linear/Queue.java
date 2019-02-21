@@ -1,7 +1,4 @@
-package com.knuth;
-
-import com.knuth.OverflowException;
-import com.knuth.UnderflowException;
+package com.knuth.linear;
 
 /**
  * A queue is a linear list for which all insertions are made at one end of the list; all deletions (and accesses)

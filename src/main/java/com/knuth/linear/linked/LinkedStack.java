@@ -1,4 +1,7 @@
-package com.knuth;
+package com.knuth.linear.linked;
+
+import com.knuth.linear.Stack;
+import com.knuth.linear.UnderflowException;
 
 import java.util.Objects;
 

@@ -1,6 +1,6 @@
-package com.knuth;
+package com.knuth.linear.sequential;
 
-class IntUtils {
+public class IntUtils {
 
     public static int inc(int i, int n) {
         checkModule(n);

@@ -1,4 +1,4 @@
-package com.knuth;
+package com.knuth.linear;
 
 /**
  * Deque is a linear list for which all insertions and deletions (and acceses) are made at the ends of the list.

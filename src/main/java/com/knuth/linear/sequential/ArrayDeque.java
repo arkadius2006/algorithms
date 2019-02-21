@@ -1,5 +1,9 @@
-package com.knuth;
+package com.knuth.linear.sequential;
 
+
+import com.knuth.linear.Deque;
+import com.knuth.linear.OverflowException;
+import com.knuth.linear.UnderflowException;
 
 import java.util.Objects;
 

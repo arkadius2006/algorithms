@@ -1,4 +1,4 @@
-package com.knuth;
+package com.knuth.linear;
 
 /**
  * Underflow exception is thrown when one attempts to extract item
