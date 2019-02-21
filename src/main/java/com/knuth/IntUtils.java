@@ -1,4 +1,4 @@
-package com.math.data.impl;
+package com.knuth;
 
 class IntUtils {
 

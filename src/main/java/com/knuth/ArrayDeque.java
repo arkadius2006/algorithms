@@ -1,15 +1,12 @@
-package com.math.data.impl;
+package com.knuth;
 
-import com.math.data.Deque;
-import com.knuth.OverflowException;
-import com.knuth.UnderflowException;
 
 import java.util.Objects;
 
 /**
  * D. Knuth. Art of Computer Programming, Vol 1: Section 2.2.2. Sequential Allocations.
  */
-class ArrayDeque implements Deque {
+public class ArrayDeque implements Deque {
     private final int capacity;
     private final Object[] data;
     private int left;

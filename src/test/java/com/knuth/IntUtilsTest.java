@@ -1,5 +1,6 @@
-package com.math.data.impl;
+package com.knuth;
 
+import com.knuth.IntUtils;
 import org.junit.Assert;
 import org.junit.Test;
 

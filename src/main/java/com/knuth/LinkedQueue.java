@@ -1,14 +1,11 @@
-package com.math.data.impl;
-
-import com.math.data.Queue;
-import com.knuth.UnderflowException;
+package com.knuth;
 
 import java.util.Objects;
 
 /**
  * D. Knuth. Art of Computer Programming, Vol 1: Section 2.2.4. Circular Lists.
  */
-class LinkedQueue implements Queue {
+public class LinkedQueue implements Queue {
     private Node rear;
 
     public LinkedQueue() {

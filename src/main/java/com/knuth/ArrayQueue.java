@@ -1,15 +1,11 @@
-package com.math.data.impl;
-
-import com.knuth.OverflowException;
-import com.math.data.Queue;
-import com.knuth.UnderflowException;
+package com.knuth;
 
 import java.util.Objects;
 
 /**
  * D. Knuth. Art of Computer Programming, Vol 1: Section 2.2.2. Sequential Allocations.
  */
-class ArrayQueue implements Queue {
+public class ArrayQueue implements Queue {
     private final int capacity;
     private final Object[] data;
     private int front;

@@ -1,14 +1,11 @@
-package com.math.data.impl;
-
-import com.math.data.Deque;
-import com.knuth.UnderflowException;
+package com.knuth;
 
 import java.util.Objects;
 
 /**
  * D. Knuth. Art of Computer Programming, Vol 1: Section 2.2.5. Doubly Linked Lists.
  */
-class LinkedDeque implements Deque {
+public class LinkedDeque implements Deque {
     private final Node head;
 
     public LinkedDeque() {

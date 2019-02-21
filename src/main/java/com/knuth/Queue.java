@@ -1,4 +1,4 @@
-package com.math.data;
+package com.knuth;
 
 import com.knuth.OverflowException;
 import com.knuth.UnderflowException;

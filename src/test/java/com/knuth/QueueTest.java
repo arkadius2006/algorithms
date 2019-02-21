@@ -1,7 +1,5 @@
-package com.math.data.impl;
+package com.knuth;
 
-import com.math.data.Queue;
-import com.knuth.UnderflowException;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
