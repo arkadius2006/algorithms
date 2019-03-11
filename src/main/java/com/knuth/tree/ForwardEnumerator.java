@@ -4,6 +4,7 @@ import com.knuth.linear.Stack;
 import com.knuth.linear.linked.LinkedStack;
 
 import java.util.Iterator;
+import java.util.NoSuchElementException;
 import java.util.function.Consumer;
 
 /**
@@ -20,27 +21,26 @@ public class ForwardEnumerator implements Iterator<Object> {
 
     @Override
     public boolean hasNext() {
-        //
-        return false;
-
+        throw new UnsupportedOperationException();
     }
 
     @Override
     public Object next() {
-        if (roots.isEmpty()) {
-            throw new IllegalStateException();
+        // pop until discover non-null node or get to the bottom of stack
+        Node x = null;
+        while (x == null && !roots.isEmpty()) {
+            x = (Node) roots.pop();
         }
 
-        Node x = (Node) roots.pop();
-        if () {
+        if (x != null) {
+            Object value = x.payload();
+            roots.push(x.leftChild());
+            roots.push(x.rightChild());
 
+            return value;
+        } else {
+            return new NoSuchElementException();
         }
-
-        Object payload = x.payload();
-        roots.push(x.leftChild());
-        roots.push(x.rightChild());
-
-        return payload;
     }
 
     public void traverse(Consumer<Object> sink) {
