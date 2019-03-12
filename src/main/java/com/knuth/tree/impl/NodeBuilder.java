@@ -3,16 +3,15 @@ package com.knuth.tree.impl;
 import com.knuth.tree.Node;
 
 public class NodeBuilder {
-    private Object payload;
+    private final Object payload;
     private Node left;
     private Node right;
 
+    public NodeBuilder(Object payload) {
+        this.payload = payload;
+    }
     public Node build() {
         return new SimpleNode(payload, left, right);
-    }
-
-    public void payload(Object o) {
-        this.payload = o;
     }
 
     public void left(Node n) {

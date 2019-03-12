@@ -16,11 +16,26 @@ public class ForwardTreeTraversalTest {
 
     @Test
     public void testOne() {
-        NodeBuilder root = new NodeBuilder();
-        root.payload("1");
+        NodeBuilder a = new NodeBuilder("a");
 
         StringBuilder sb = new StringBuilder();
-        alg.traverse(root.build(), sb::append);
-        Assert.assertEquals("", "1", sb.toString());
+        alg.traverse(a.build(), sb::append);
+        Assert.assertEquals("", "a", sb.toString());
+    }
+
+    @Test
+    public void testTree() {
+        NodeBuilder a = new NodeBuilder("a");
+
+        NodeBuilder b = new NodeBuilder("b");
+        a.left(b.build());
+
+        NodeBuilder c = new NodeBuilder("c");
+        a.right(c.build());
+
+        StringBuilder sb = new StringBuilder();
+        alg.traverse(a.build(), sb::append);
+        Assert.assertEquals("", "abc", sb.toString());
+
     }
 }
