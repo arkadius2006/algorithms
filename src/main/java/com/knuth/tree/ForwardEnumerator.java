@@ -11,7 +11,7 @@ import java.util.function.Consumer;
  * Produces a sequence of all tree nodes in "forward" order:
  * parent nodes appear before children in the sequence.
  */
-public class ForwardEnumerator<T> implements Iterator<T> {
+public class ForwardEnumerator implements Iterator<Object> {
     private final Stack roots;
 
     public ForwardEnumerator(Node root) {
@@ -25,30 +25,30 @@ public class ForwardEnumerator<T> implements Iterator<T> {
     }
 
     @Override
-    public T next() {
+    public Object next() {
         // pop until discover non-null node or get to the bottom of stack
-        Node<T> x = null;
+        Node x = null;
         while (x == null && !roots.isEmpty()) {
-            x = (Node<T>) roots.pop();
+            x = (Node) roots.pop();
         }
 
         if (x != null) {
-            T value = x.payload();
+            Object value = x.payload();
             roots.push(x.leftChild());
             roots.push(x.rightChild());
 
             return value;
         } else {
-            throw new NoSuchElementException();
+            return new NoSuchElementException();
         }
     }
 
-    public void traverse(Consumer<T> sink) {
+    public void traverse(Consumer<Object> sink) {
         while (!roots.isEmpty()) {
-            Node<T> x = (Node<T>) roots.pop();
+            Node x = (Node) roots.pop();
 
             if (x != null) {
-                T payload = x.payload();
+                Object payload = x.payload();
                 sink.accept(payload);
 
                 roots.push(x.leftChild());
