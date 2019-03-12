@@ -5,8 +5,9 @@ import com.knuth.linear.linked.LinkedStack;
 
 
 /**
- * Produces a sequence of all tree nodes in "forward" order:
- * parent nodes appear before children in the sequence.
+ * Visits all tree nodes, each exactly one time, and performs an action at each node.
+ * <p/>
+ * Parent nodes are visited BEFORE children ("preorder").
  */
 public class ForwardTreeTraversal implements TreeTraversal {
 
