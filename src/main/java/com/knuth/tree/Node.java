@@ -10,10 +10,10 @@ public interface Node {
     /**
      * Could be null. Means this node has no left child.
      */
-    Node leftChild();
+    Node left();
 
     /**
      * Could be null. Means this node has no right child.
      */
-    Node rightChild();
+    Node right();
 }

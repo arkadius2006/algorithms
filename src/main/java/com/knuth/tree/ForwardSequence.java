@@ -16,8 +16,8 @@ class ForwardSequence implements Sequence {
 
         if (x != null) {
             Object payload = x.payload();
-            nodes.push(x.leftChild());
-            nodes.push(x.rightChild());
+            nodes.push(x.left());
+            nodes.push(x.right());
 
             return Item.of(payload);
         } else {

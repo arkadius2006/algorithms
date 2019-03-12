@@ -20,8 +20,8 @@ public class ForwardTraversal implements Traversal {
 
             if (x != null) {
                 Object payload = x.payload();
-                stack.push(x.leftChild());
-                stack.push(x.rightChild());
+                stack.push(x.left());
+                stack.push(x.right());
 
                 action.accept(payload);
             }
