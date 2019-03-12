@@ -27,10 +27,12 @@ import java.util.Iterator;
  * <pre>
  *     Sequence s = ...
  *
- *     Object o = s.next();
- *     while (o != null) {
+ *     Item i = s.next();
+ *     while (!i.isEmpty()) {
+ *         Object o = i.value();
  *         ...
- *         o = s.next();
+ *
+ *         i = s.next();
  *     }
  * </pre>
  */
@@ -39,5 +41,5 @@ public interface Sequence {
     /**
      * Yields next item in the sequence, or {@code null} if end of sequence is reached.
      */
-    Object next();
+    Item next();
 }
