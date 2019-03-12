@@ -3,9 +3,9 @@ package com.knuth.tree;
 /**
  * Binary tree node.
  */
-public interface Node {
+public interface Node<T> {
 
-    Object payload();
+    T payload();
 
     /**
      * Can be null. Means this node has no left child.
