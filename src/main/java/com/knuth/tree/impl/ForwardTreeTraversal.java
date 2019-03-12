@@ -6,6 +6,8 @@ import com.knuth.tree.Action;
 import com.knuth.tree.Node;
 import com.knuth.tree.TreeTraversal;
 
+import java.util.function.Consumer;
+
 
 /**
  * Visits all tree nodes, each exactly one time, and performs an action at each node.
@@ -20,14 +22,16 @@ public class ForwardTreeTraversal implements TreeTraversal {
 
         while (!stack.isEmpty()) {
             Node x = (Node) stack.pop();
+            acceptIfNonNull(x.left(), stack::push);
+            acceptIfNonNull(x.right(), stack::push);
 
-            if (x != null) {
-                Object payload = x.payload();
-                stack.push(x.left());
-                stack.push(x.right());
+            action.act(x.payload());
+        }
+    }
 
-                action.act(payload);
-            }
+    private void acceptIfNonNull(Node x, Consumer<Node> a) {
+        if (x != null) {
+            a.accept(x);
         }
     }
 }
