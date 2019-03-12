@@ -11,7 +11,7 @@ public class ForwardSequence implements Sequence {
         nodes.push(root);
     }
 
-    public Object next() {
+    public Item next() {
         Node x = popUntilNonNullNodeFound();
 
         if (x != null) {
@@ -19,9 +19,9 @@ public class ForwardSequence implements Sequence {
             nodes.push(x.leftChild());
             nodes.push(x.rightChild());
 
-            return payload;
+            return Item.of(payload);
         } else {
-            return null;
+            return Item.empty();
         }
     }
 

@@ -39,7 +39,8 @@ import java.util.Iterator;
 public interface Sequence {
 
     /**
-     * Yields next item in the sequence, or {@code null} if end of sequence is reached.
+     * Yields next item in the sequence.
+     * Method {@link Item#isEmpty()} could be used to find whether end of sequence is reached.
      */
     Item next();
 }

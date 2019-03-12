@@ -15,7 +15,7 @@ public class Item {
         return EMPTY;
     }
 
-    public static Item ofValue(Object o) {
+    public static Item of(Object o) {
         return new Item(o);
     }
 
