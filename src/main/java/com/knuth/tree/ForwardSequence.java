@@ -3,7 +3,7 @@ package com.knuth.tree;
 import com.knuth.linear.Stack;
 import com.knuth.linear.linked.LinkedStack;
 
-public class ForwardSequence implements Sequence {
+class ForwardSequence implements Sequence {
     private final Stack nodes;
 
     public ForwardSequence(Node root) {
