@@ -1,7 +1,10 @@
-package com.knuth.tree;
+package com.knuth.tree.impl;
 
 import com.knuth.linear.Stack;
 import com.knuth.linear.linked.LinkedStack;
+import com.knuth.tree.Item;
+import com.knuth.tree.Node;
+import com.knuth.tree.Sequence;
 
 class ForwardSequence implements Sequence {
     private final Stack nodes;
