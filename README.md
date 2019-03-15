@@ -1,2 +1,1 @@
-# math-data
-Data structures
+Data structures and algorithms. Practice. 
