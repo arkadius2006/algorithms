@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.knuth</groupId>
-    <artifactId>data-structures</artifactId>
+    <artifactId>algorithms</artifactId>
     <version>1.0-SNAPSHOT</version>
     <build>
         <plugins>
