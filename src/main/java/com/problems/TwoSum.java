@@ -19,15 +19,15 @@ public class TwoSum {
         Map<Integer, Integer> indices = new HashMap<>();
 
         for (int j = 0; j < a.length; j += 1) {
-            int val = a[j];
-
-            int complement = target - val;
+            // at this point map contains all array elements with index i < j
+            // try find a[i] such that: a[i] == target - a[j]
+            int complement = target - a[j];
             Integer i = indices.get(complement);
 
             if (i != null) {
                 return new int[]{i, j};
             } else {
-                indices.put(val, j);
+                indices.put(a[j], j);
             }
         }
 
