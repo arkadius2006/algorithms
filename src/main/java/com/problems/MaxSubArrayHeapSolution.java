@@ -55,6 +55,7 @@ public class MaxSubArrayHeapSolution {
 
         heap.add(b[0]);
         for (int j = 1; j < m; j += 1) {
+            // at this point heap contains all elements before b[j], but not b[j]
             int min = heap.element();
             int val = b[j] - min;
 
