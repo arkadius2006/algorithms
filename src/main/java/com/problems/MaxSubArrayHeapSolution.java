@@ -26,8 +26,9 @@ import java.util.PriorityQueue;
  * Overall, algorithm has O(n log(n)) time complexity worst case,
  * and uses O(n) additional space.
  */
-public class MaxSubArrayHeapSolution {
+public class MaxSubArrayHeapSolution implements MaxSubArray {
 
+    @Override
     public int maxSubArray(int[] a) {
         if (a.length == 0) {
             throw new IllegalArgumentException("Array is empty");

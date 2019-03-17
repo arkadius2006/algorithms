@@ -6,11 +6,11 @@ import org.junit.Test;
 
 public class MaxSubArrayTest {
 
-    private MaxSubArray algorithm;
+    private MaxSubArrayDivideAndConquerSolution algorithm;
 
     @Before
     public void seUp() {
-        algorithm = new MaxSubArray();
+        algorithm = new MaxSubArrayDivideAndConquerSolution();
     }
 
     @Test
