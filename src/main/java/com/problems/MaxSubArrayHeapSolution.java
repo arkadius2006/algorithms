@@ -22,6 +22,9 @@ import java.util.PriorityQueue;
  * That purpose is accomplished by min-heap data structure.
  *
  * It has efficient min() and add() operations - both O(log n).
+ *
+ * Overall, algorithm has O(n log(n)) time complexity worst case,
+ * and uses O(n) additional space.
  */
 public class MaxSubArrayHeapSolution {
 
