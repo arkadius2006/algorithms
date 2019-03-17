@@ -3,14 +3,25 @@ package com.problems;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.junit.runners.Parameterized;
 
+import java.util.Arrays;
+
+@RunWith(Parameterized.class)
 public class MaxSubArrayTest {
 
-    private MaxSubArrayDivideAndConquerSolution algorithm;
+    @Parameterized.Parameters(name = "{0}")
+    public static Iterable<?> data() {
+        return Arrays.asList(
+                new MaxSubArrayDivideAndConquerSolution(),
+                new MaxSubArrayHeapSolution());
+    }
 
-    @Before
-    public void seUp() {
-        algorithm = new MaxSubArrayDivideAndConquerSolution();
+    private final MaxSubArray algorithm;
+
+    public MaxSubArrayTest(MaxSubArray algorithm) {
+        this.algorithm = algorithm;
     }
 
     @Test

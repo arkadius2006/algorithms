@@ -72,5 +72,10 @@ public class MaxSubArrayHeapSolution implements MaxSubArray {
 
         return currentMax;
     }
+
+    @Override
+    public String toString() {
+        return "heap";
+    }
 }
 

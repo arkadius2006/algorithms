@@ -89,4 +89,8 @@ public class MaxSubArrayDivideAndConquerSolution implements MaxSubArray {
         return a > b ? a : b;
     }
 
+    @Override
+    public String toString() {
+        return "divide-and-conquer";
+    }
 }
