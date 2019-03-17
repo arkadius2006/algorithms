@@ -25,49 +25,31 @@ import java.util.PriorityQueue;
  *
  * Overall, algorithm has O(n log(n)) time complexity worst case,
  * and uses O(n) additional space.
+ *
+ * Below tow steps are performed in one loop: accumulating sum and adding to heap/computing min.
  */
 public class MaxSubArrayHeapSolution implements MaxSubArray {
 
     @Override
-    public int maxSubArray(int[] a) {
-        if (a.length == 0) {
+    public int maxSubArray(int[] array) {
+        if (array.length == 0) {
             throw new IllegalArgumentException("Array is empty");
         }
 
-        int[] b = computePartialSums(a);
-        return findMaxOrderedDifference(b);
-    }
-
-    private int[] computePartialSums(int[] a) {
-        int n = a.length;
-        int[] s = new int[n + 1];
-
-        s[0] = 0;
-        for (int k = 0; k < n; k += 1) {
-            s[k + 1] = s[k] + a[k];
-        }
-
-        return s;
-    }
-
-    // find max (b[j] - b[i]), i < j
-    private int findMaxOrderedDifference(int[] b) {
-        int m = b.length;
         int currentMax = Integer.MIN_VALUE;
 
-        PriorityQueue<Integer> heap = new PriorityQueue<>();
-
-        heap.add(b[0]);
-        for (int j = 1; j < m; j += 1) {
-            // at this point heap contains all elements before b[j], but not b[j]
+        PriorityQueue<Integer> heap = new PriorityQueue<>(array.length + 1);
+        int sum = 0;
+        for (int a: array) {
+            heap.add(sum);
             int min = heap.element();
-            int val = b[j] - min;
 
-            if (val > currentMax) {
-                currentMax = val;
+            sum += a;
+            int candidate = sum - min;
+
+            if (candidate > currentMax) {
+                currentMax = candidate;
             }
-
-            heap.add(b[j]);
         }
 
         return currentMax;
