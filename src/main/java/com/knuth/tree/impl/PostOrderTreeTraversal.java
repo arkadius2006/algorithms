@@ -7,7 +7,7 @@ import com.knuth.tree.TreeTraversal;
 /**
  * Visits all tree nodes, each exactly one time, and performs an action at each node.
  * <p/>
- * Parent nodes are visited BEFORE children ("post-order").
+ * Parent nodes are visited AFTER children ("post-order").
  */
 
 public class PostOrderTreeTraversal implements TreeTraversal {
