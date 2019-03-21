@@ -4,7 +4,7 @@ import com.knuth.linear.Stack;
 import com.knuth.linear.linked.LinkedStack;
 import com.knuth.tree.Action;
 import com.knuth.tree.Tree;
-import com.knuth.tree.TreeTraversal;
+import com.knuth.tree.TreeWalk;
 
 /**
  * Visits all tree nodes, each exactly one time, and performs an action at each node.
@@ -12,7 +12,7 @@ import com.knuth.tree.TreeTraversal;
  * Parent nodes are visited AFTER children ("post-order").
  */
 
-public class PostOrderTreeTraversal implements TreeTraversal {
+public class PostOrderTreeWalk implements TreeWalk {
 
     @Override
     public void walk(Tree x, Action a) {

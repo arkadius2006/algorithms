@@ -8,7 +8,7 @@ package com.knuth.tree;
  * Essentially, an algorithm that implements this interface
  * produces some linear ordering of tree nodes.
  */
-public interface TreeTraversal {
+public interface TreeWalk {
 
     void walk(Tree t, Action a);
 }

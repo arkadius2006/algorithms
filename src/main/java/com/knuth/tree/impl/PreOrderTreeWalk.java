@@ -4,7 +4,7 @@ import com.knuth.linear.Stack;
 import com.knuth.linear.linked.LinkedStack;
 import com.knuth.tree.Action;
 import com.knuth.tree.Tree;
-import com.knuth.tree.TreeTraversal;
+import com.knuth.tree.TreeWalk;
 
 
 /**
@@ -23,7 +23,7 @@ import com.knuth.tree.TreeTraversal;
  * }
  * </pre>
  */
-public class PreOrderTreeTraversal implements TreeTraversal {
+public class PreOrderTreeWalk implements TreeWalk {
 
     public void walk(Tree t, Action a) {
         Stack s = new LinkedStack();
