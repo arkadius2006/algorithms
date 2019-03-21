@@ -1,7 +1,7 @@
 package com.knuth.tree.impl;
 
 import com.knuth.tree.Action;
-import com.knuth.tree.Node;
+import com.knuth.tree.Tree;
 import com.knuth.tree.TreeTraversal;
 
 /**
@@ -13,7 +13,7 @@ import com.knuth.tree.TreeTraversal;
 public class PostOrderTreeTraversal implements TreeTraversal {
 
     @Override
-    public void traverse(Node n, Action a) {
+    public void traverse(Tree n, Action a) {
 
     }
 }

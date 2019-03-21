@@ -11,5 +11,5 @@ package com.knuth.tree;
  */
 public interface TreeSequencer {
 
-    Sequence enumerate(Node root);
+    Sequence enumerate(Tree root);
 }

@@ -1,13 +1,13 @@
 package com.knuth.tree.impl;
 
-import com.knuth.tree.Node;
+import com.knuth.tree.Tree;
 
-class SimpleNode implements Node {
+class SimpleTree implements Tree {
     private final Object payload;
-    private final Node left;
-    private final Node right;
+    private final Tree left;
+    private final Tree right;
 
-    public SimpleNode(Object payload, Node left, Node right) {
+    public SimpleTree(Object payload, Tree left, Tree right) {
         this.payload = payload;
         this.left = left;
         this.right = right;
@@ -19,12 +19,12 @@ class SimpleNode implements Node {
     }
 
     @Override
-    public Node left() {
+    public Tree left() {
         return left;
     }
 
     @Override
-    public Node right() {
+    public Tree right() {
         return right;
     }
 }

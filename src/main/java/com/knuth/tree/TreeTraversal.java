@@ -10,5 +10,5 @@ package com.knuth.tree;
  */
 public interface TreeTraversal {
 
-    void traverse(Node root, Action action);
+    void traverse(Tree root, Action action);
 }

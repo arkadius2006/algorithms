@@ -3,17 +3,17 @@ package com.knuth.tree;
 /**
  * Binary tree node.
  */
-public interface Node {
+public interface Tree {
 
     Object payload();
 
     /**
      * Could be null. Means this node has no left child.
      */
-    Node left();
+    Tree left();
 
     /**
      * Could be null. Means this node has no right child.
      */
-    Node right();
+    Tree right();
 }

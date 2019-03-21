@@ -1,11 +1,9 @@
 package com.knuth.tree.impl;
 
 import com.knuth.linear.Queue;
-import com.knuth.linear.Stack;
 import com.knuth.linear.linked.LinkedQueue;
-import com.knuth.linear.linked.LinkedStack;
 import com.knuth.tree.Action;
-import com.knuth.tree.Node;
+import com.knuth.tree.Tree;
 import com.knuth.tree.TreeTraversal;
 
 import java.util.function.Consumer;
@@ -18,12 +16,12 @@ import java.util.function.Consumer;
  */
 public class ForwardTreeTraversal implements TreeTraversal {
 
-    public void traverse(Node root, Action action) {
+    public void traverse(Tree root, Action action) {
         Queue q = new LinkedQueue();
         q.enqueue(root);
 
         while (!q.isEmpty()) {
-            Node x = (Node) q.dequeue();
+            Tree x = (Tree) q.dequeue();
             acceptIfNonNull(x.left(), q::enqueue);
             acceptIfNonNull(x.right(), q::enqueue);
 
@@ -31,7 +29,7 @@ public class ForwardTreeTraversal implements TreeTraversal {
         }
     }
 
-    private void acceptIfNonNull(Node x, Consumer<Node> a) {
+    private void acceptIfNonNull(Tree x, Consumer<Tree> a) {
         if (x != null) {
             a.accept(x);
         }

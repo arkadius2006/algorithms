@@ -1,6 +1,6 @@
 package com.knuth.tree.impl;
 
-import com.knuth.tree.Node;
+import com.knuth.tree.Tree;
 import com.knuth.tree.Sequence;
 import com.knuth.tree.TreeSequencer;
 
@@ -11,7 +11,7 @@ import com.knuth.tree.TreeSequencer;
 public class ForwardTreeSequencer implements TreeSequencer {
 
     @Override
-    public Sequence enumerate(Node root) {
+    public Sequence enumerate(Tree root) {
         return new ForwardSequence(root);
     }
 }
