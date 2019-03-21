@@ -19,7 +19,7 @@ public class PreOrderTreeTraversalTest {
         NodeBuilder a = new NodeBuilder("a");
 
         StringBuilder sb = new StringBuilder();
-        alg.traverse(a.build(), sb::append);
+        alg.walk(a.build(), sb::append);
         Assert.assertEquals("", "a", sb.toString());
     }
 
@@ -34,7 +34,7 @@ public class PreOrderTreeTraversalTest {
         a.right(c.build());
 
         StringBuilder sb = new StringBuilder();
-        alg.traverse(a.build(), sb::append);
+        alg.walk(a.build(), sb::append);
         Assert.assertEquals("", "abc", sb.toString());
 
     }

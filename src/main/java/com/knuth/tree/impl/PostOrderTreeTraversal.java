@@ -15,7 +15,7 @@ import com.knuth.tree.TreeTraversal;
 public class PostOrderTreeTraversal implements TreeTraversal {
 
     @Override
-    public void traverse(Tree x, Action a) {
+    public void walk(Tree x, Action a) {
         // stack contains nodes from root to current node
         // unwinding stack results in moving up to the root
         // top of stack is parent of current node (null is stack is empty)
