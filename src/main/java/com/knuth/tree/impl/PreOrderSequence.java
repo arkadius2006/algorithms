@@ -6,10 +6,10 @@ import com.knuth.tree.Item;
 import com.knuth.tree.Tree;
 import com.knuth.tree.Sequence;
 
-class ForwardSequence implements Sequence {
+class PreOrderSequence implements Sequence {
     private final Stack nodes;
 
-    public ForwardSequence(Tree root) {
+    public PreOrderSequence(Tree root) {
         nodes = new LinkedStack();
         nodes.push(root);
     }

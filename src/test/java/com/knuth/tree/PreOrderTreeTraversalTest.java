@@ -1,17 +1,17 @@
 package com.knuth.tree;
 
-import com.knuth.tree.impl.ForwardTreeTraversal;
+import com.knuth.tree.impl.PreOrderTreeTraversal;
 import com.knuth.tree.impl.NodeBuilder;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
-public class ForwardTreeTraversalTest {
+public class PreOrderTreeTraversalTest {
     TreeTraversal alg;
 
     @Before
     public void setUpAlgorithm() {
-        alg = new ForwardTreeTraversal();
+        alg = new PreOrderTreeTraversal();
     }
 
     @Test

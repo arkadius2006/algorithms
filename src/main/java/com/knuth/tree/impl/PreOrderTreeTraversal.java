@@ -12,9 +12,9 @@ import java.util.function.Consumer;
 /**
  * Visits all tree nodes, each exactly one time, and performs an action at each node.
  * <p/>
- * Parent nodes are visited BEFORE children ("preorder").
+ * Parent nodes are visited BEFORE children ("pre-order").
  */
-public class ForwardTreeTraversal implements TreeTraversal {
+public class PreOrderTreeTraversal implements TreeTraversal {
 
     public void traverse(Tree root, Action action) {
         Queue q = new LinkedQueue();
