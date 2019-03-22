@@ -32,11 +32,9 @@ public class PreOrderTreeWalk implements TreeWalk {
 
         while (true) {
             if (a != null) {
-                Tree b = a.left();
-                Tree c = a.right();
                 q.accept(a);
-                s.push(c);
-                a = b;
+                s.push(a.right());
+                a = a.left();
             } else if (!s.isEmpty()) {
                 a = (Tree) s.pop();
             } else {

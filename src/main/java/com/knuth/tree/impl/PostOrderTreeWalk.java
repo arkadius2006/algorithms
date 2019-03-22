@@ -16,7 +16,7 @@ import java.util.function.Consumer;
 public class PostOrderTreeWalk implements TreeWalk {
 
     @Override
-    public void walk(Tree x, Consumer<Tree> a) {
+    public void walk(Tree x, Consumer<Tree> op) {
         // stack contains nodes from root to current node
         // unwinding stack results in moving up to the root
         // top of stack is parent of current node (null is stack is empty)

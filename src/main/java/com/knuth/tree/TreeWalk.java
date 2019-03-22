@@ -12,5 +12,5 @@ import java.util.function.Consumer;
  */
 public interface TreeWalk {
 
-    void walk(Tree a, Consumer<Tree> l);
+    void walk(Tree t, Consumer<Tree> action);
 }
