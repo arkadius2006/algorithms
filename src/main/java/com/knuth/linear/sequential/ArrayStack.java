@@ -34,8 +34,6 @@ public class ArrayStack implements Stack {
 
     @Override
     public void push(Object o) throws OverflowException {
-        Objects.requireNonNull(o);
-
         if (isFull()) {
             throw new OverflowException(this);
         }

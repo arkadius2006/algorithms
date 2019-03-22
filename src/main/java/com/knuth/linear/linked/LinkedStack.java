@@ -27,8 +27,6 @@ public class LinkedStack implements Stack {
 
     @Override
     public void push(Object o) {
-        Objects.requireNonNull(o);
-
         Node a = new Node();
         a.data = o;
 
