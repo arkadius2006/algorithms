@@ -10,5 +10,5 @@ package com.knuth.tree;
  */
 public interface TreeWalk {
 
-    void walk(Tree t, Action a);
+    void walk(Tree t, TreeWalkListener a);
 }

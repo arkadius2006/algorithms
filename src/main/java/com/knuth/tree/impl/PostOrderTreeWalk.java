@@ -2,7 +2,7 @@ package com.knuth.tree.impl;
 
 import com.knuth.linear.Stack;
 import com.knuth.linear.linked.LinkedStack;
-import com.knuth.tree.Action;
+import com.knuth.tree.TreeWalkListener;
 import com.knuth.tree.Tree;
 import com.knuth.tree.TreeWalk;
 
@@ -15,7 +15,7 @@ import com.knuth.tree.TreeWalk;
 public class PostOrderTreeWalk implements TreeWalk {
 
     @Override
-    public void walk(Tree x, Action a) {
+    public void walk(Tree x, TreeWalkListener a) {
         // stack contains nodes from root to current node
         // unwinding stack results in moving up to the root
         // top of stack is parent of current node (null is stack is empty)

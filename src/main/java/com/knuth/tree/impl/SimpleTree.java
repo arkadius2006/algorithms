@@ -27,4 +27,9 @@ class SimpleTree implements Tree {
     public Tree right() {
         return right;
     }
+
+    @Override
+    public String toString() {
+        return String.valueOf(payload);
+    }
 }
