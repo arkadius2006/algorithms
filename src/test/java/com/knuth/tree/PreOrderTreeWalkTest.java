@@ -1,7 +1,7 @@
 package com.knuth.tree;
 
 import com.knuth.tree.impl.PreOrderTreeWalk;
-import com.knuth.tree.impl.NodeBuilder;
+import com.knuth.tree.impl.TreeBuilder;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
@@ -16,7 +16,7 @@ public class PreOrderTreeWalkTest {
 
     @Test
     public void testOne() {
-        NodeBuilder a = new NodeBuilder("a");
+        TreeBuilder a = new TreeBuilder("a");
 
         StringBuilder sb = new StringBuilder();
         alg.walk(a.build(), sb::append);
@@ -25,12 +25,12 @@ public class PreOrderTreeWalkTest {
 
     @Test
     public void testTree() {
-        NodeBuilder a = new NodeBuilder("a");
+        TreeBuilder a = new TreeBuilder("a");
 
-        NodeBuilder b = new NodeBuilder("b");
+        TreeBuilder b = new TreeBuilder("b");
         a.left(b.build());
 
-        NodeBuilder c = new NodeBuilder("c");
+        TreeBuilder c = new TreeBuilder("c");
         a.right(c.build());
 
         StringBuilder sb = new StringBuilder();
