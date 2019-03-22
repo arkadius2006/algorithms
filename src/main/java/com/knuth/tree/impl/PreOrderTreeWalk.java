@@ -2,9 +2,10 @@ package com.knuth.tree.impl;
 
 import com.knuth.linear.Stack;
 import com.knuth.linear.linked.LinkedStack;
-import com.knuth.tree.TreeWalkListener;
 import com.knuth.tree.Tree;
 import com.knuth.tree.TreeWalk;
+
+import java.util.function.Consumer;
 
 
 /**
@@ -14,9 +15,9 @@ import com.knuth.tree.TreeWalk;
  * <p>
  * This is explicit version of the following recursive algorithm:
  * <pre>
- * void R(Tree t, TreeWalkListener a) {
+ * void R(Tree a, Consumer q) {
  *     if (t != null) {
- *         a.onNode(t);
+ *         q.accept(t);
  *         R(t.left());
  *         R(t.right());
  *     }
@@ -26,14 +27,14 @@ import com.knuth.tree.TreeWalk;
 public class PreOrderTreeWalk implements TreeWalk {
 
     @Override
-    public void walk(Tree a, TreeWalkListener q) {
+    public void walk(Tree a, Consumer<Tree> q) {
         Stack s = new LinkedStack();
 
         while (true) {
             if (a != null) {
                 Tree b = a.left();
                 Tree c = a.right();
-                q.onNode(a);
+                q.accept(a);
                 s.push(c);
                 a = b;
             } else if (!s.isEmpty()) {

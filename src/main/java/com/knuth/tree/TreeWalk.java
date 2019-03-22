@@ -1,8 +1,10 @@
 package com.knuth.tree;
 
 
+import java.util.function.Consumer;
+
 /**
- * Visits all tree nodes in some order. Each node is visited exactly one time.
+ * Iterates over tree nodes. Each tree node is visited exactly one time.
  * Performs an action at each node.
  * <p/>
  * Essentially, an algorithm that implements this interface
@@ -10,5 +12,5 @@ package com.knuth.tree;
  */
 public interface TreeWalk {
 
-    void walk(Tree t, TreeWalkListener a);
+    void walk(Tree a, Consumer<Tree> l);
 }
