@@ -1,4 +1,4 @@
-\documentclass[12pt]{article}
+\documentclass[12pt,a4paper]{article}
 
 \usepackage{polyglossia}
 \setdefaultlanguage{english}
@@ -19,6 +19,11 @@
 
 \begin{document}
 
+\title{Cycle detection problem}
+\author{}
+\date{}
+\maketitle
+
 \section{The problem}
 
 Let function $ f $ maps finite set $ S $ to itself: 
@@ -32,6 +37,9 @@ x_0 = a \\
 x_{i+1} = f(x_i), \quad i = 0, 1, \ldots
 \end{gather}
 
-
+Since $ S $ is finite all values $ x_i $ cannot be different, and some value $ x_i $ will be appear in the sequence at some point later:
+\[
+x_j = x_i, j > i
+\]
 
 \end{document}
