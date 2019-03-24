@@ -37,9 +37,56 @@ x_0 = a \\
 x_{i+1} = f(x_i), \quad i = 0, 1, \ldots
 \end{gather}
 
-Since $ S $ is finite all values $ x_i $ cannot be different, and some value $ x_i $ will be appear in the sequence at some point later:
-\[
-x_j = x_i, j > i
-\]
+Since $ S $ is finite, the sequence contain duplicates.
+
+\section{The analysis}
+
+Let $ \nu $ be \emph{the largest} index such that values
+
+\begin{equation}
+x_0, x_1, \ldots, x_{\nu-1}
+\end{equation}
+are all different. This means the value $ x_{\nu} $ already appeared in the sequence before, at some index $ \mu < \nu $:
+
+\begin{equation}
+x_{\nu} = x_{\mu}
+\end{equation}
+
+Let
+\begin{equation}
+\lambda = \nu - \mu
+\end{equation}
+
+By applying function $ f $ to both sides of equation
+\begin{gather}
+x_{\mu + \lambda} = x_{\mu}
+\end{gather}
+
+we have
+\begin{gather}
+x_{\mu + \lambda + 1} = x_{\mu + 1}
+\end{gather}
+
+Apply function $ f $ again:
+\begin{gather}
+x_{\mu + \lambda + 2} = x_{\mu + 2}
+\end{gather}
+
+By induction we conclude
+\begin{equation}\label{eq:period}
+x_{i + \lambda} = x_{i}
+\end{equation}
+for any index $ i \geq \mu $.
+
+So the sequence 
+\begin{equation}
+x_{\mu}, x_{\mu + 1}, \ldots
+\end{equation}
+is periodic. The period is $ \lambda $.
+
+From equation \ref{eq:period} we deduce that value $ x_{i}, i \geq \mu $ repeats in the sequence infinitely:
+\begin{equation}
+x_{i} = x_{i + \lambda} = x_{i + 2 \lambda} = \ldots
+\end{equation}
 
 \end{document}
