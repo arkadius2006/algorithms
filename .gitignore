@@ -2,3 +2,9 @@
 *.iml
 .idea/
 target/
+
+# tex output
+**/*.log
+**/*.aux
+**/*.gz
+**/*.pdf
