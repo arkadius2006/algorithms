@@ -82,11 +82,14 @@ So the sequence
 \begin{equation}
 x_{\mu}, x_{\mu + 1}, \ldots
 \end{equation}
-is periodic. The period is $ \lambda $.
+is periodic. The period is $ \lambda $. The values 
 
-From equation \ref{eq:period} we deduce that value $ x_{i}, i \geq \mu $ repeats in the sequence infinitely:
 \begin{equation}
-x_{i} = x_{i + \lambda} = x_{i + 2 \lambda} = \ldots
+x_{\mu}, x_{\mu+1}, \ldots, x_{\mu + \lambda - 1}
 \end{equation}
+repeats from position $ \mu + \lambda $, then from $ \mu + 2 \lambda $, etc.
+
+The cycle detection problem is to find cycle starting position $ \mu $ and its length $ \lambda $.
+
 
 \end{document}
