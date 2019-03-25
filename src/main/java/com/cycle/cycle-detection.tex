@@ -17,6 +17,10 @@
 \usepackage{mathabx}
 \usepackage{eulervm}
 
+% theorem, definition, remark
+\theoremstyle{plain}
+\newtheorem{mytheo} {Theorem}
+
 \begin{document}
 
 \title{Cycle detection problem}
@@ -84,18 +88,19 @@ x_{i + \lambda} = x_{i}
 \end{equation}
 for any index $ i \geq \mu $.
 
-So the sequence 
-\begin{equation}
-x_{\mu}, x_{\mu + 1}, \ldots
-\end{equation}
-is periodic. The period is $ \lambda $. The values 
+For future reference let us prove the following statement:
+
+\begin{mytheo}
+Given two indices $ i < j $ we have: $ x_i = x_j $ if and only if
 
 \begin{equation}
-x_{\mu}, x_{\mu+1}, \ldots, x_{\mu + \lambda - 1}
+i \geq \mu
 \end{equation}
-repeats from position $ \mu + \lambda $, then from $ \mu + 2 \lambda $, etc.
+and
+\begin{equation}
+\lambda \, | \, j - i
+\end{equation}
 
-The cycle detection problem is to find cycle starting position $ \mu $ and its length $ \lambda $.
-
+\end{mytheo}
 
 \end{document}
