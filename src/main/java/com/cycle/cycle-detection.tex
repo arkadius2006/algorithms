@@ -37,9 +37,15 @@ x_0 = a \\
 x_{i+1} = f(x_i), \quad i = 0, 1, \ldots
 \end{gather}
 
-Since $ S $ is finite, the sequence contain duplicates.
+Since $ S $ is finite the sequence gets back to the older value:
+\begin{equation}
+x_{\nu} = x_{\mu} \quad (\nu > \mu)
+\end{equation}
+and then cyclically repeats values $ x_{\mu}, \ldots, x_{\nu-1} $.
 
-\section{The analysis}
+Mathematical details are presented below. The problem in question is to find loop parameters: cycle start index $ \mu $ and its length $ \lambda $.
+
+\section{Mathematical analysis}
 
 Let $ \nu $ be \emph{the largest} index such that values
 
