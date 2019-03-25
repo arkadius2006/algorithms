@@ -40,5 +40,12 @@ public class MajorityElementTest {
         int val = algorithm.findMajorityElement(a);
         Assert.assertEquals(5, val);
     }
-    
+
+    @Test
+    public void test() {
+        int a[] = {2,2,1,1,1,2,2};
+        int val = algorithm.findMajorityElement(a);
+        Assert.assertEquals(2, val);
+    }
+
 }
