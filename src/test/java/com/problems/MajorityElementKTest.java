@@ -7,19 +7,19 @@ import java.util.Arrays;
 
 public class MajorityElementKTest {
 
-    private final MajorityElementK algorithm = new MajorityElementK();
-
     @Test
     public void one() {
         int[] a = {1, 1, 2};
-        int[] values = algorithm.findAllMajorityElements(a, 3);
+        MajorityElementK algorithm = new MajorityElementK(a, 3);
+        int[] values = algorithm.findAllMajorityElements();
         Assert.assertArrayEquals(values, new int[] {1});
     }
 
     @Test
     public void two() {
         int[] a = {1, 1, 2, 2};
-        int[] values = algorithm.findAllMajorityElements(a, 3);
+        MajorityElementK algorithm = new MajorityElementK(a, 3);
+        int[] values = algorithm.findAllMajorityElements();
         Arrays.sort(values);
         Assert.assertArrayEquals(values, new int[] {1, 2});
     }

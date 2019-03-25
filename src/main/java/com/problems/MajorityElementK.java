@@ -7,8 +7,20 @@ import java.util.Arrays;
  * more than n/k times.
  */
 public class MajorityElementK {
+    private final int[] elements;
+    private final int k;
 
-    public int[] findAllMajorityElements(int[] elements, int k) {
+    public MajorityElementK(int[] elements, int k) {
+        this.elements = elements;
+        this.k = k;
+    }
+
+    public int[] findAllMajorityElements() {
+        int[] candidates = findCandidates(); // returns no more than k - 1 candidates
+        return filterMajorityElements(candidates);
+    }
+
+    private int[] findCandidates() {
         int[] counts = new int[k - 1];
         int[] values = new int[k - 1];
 
@@ -32,15 +44,17 @@ public class MajorityElementK {
             decrementAll(counts);
         }
 
-        // values are just candidates, need to test
-        for (int i = 0; i < values.length; i += 1) {
-            if (counts[i] > 0) {
-                counts[i] = countMatches(values[i], elements);
-            }
+        return getValuesWhereCountExceeds(values, counts, 0);
+    }
+
+    private int[] filterMajorityElements(int[] candidates) {
+        int[] counts = new int[candidates.length];
+        for (int i = 0; i < candidates.length; i += 1) {
+            counts[i] = countMatches(candidates[i], elements);
         }
 
         int n = elements.length;
-        return getValuesWhereCountExceeds(values, counts, n/k);
+        return getValuesWhereCountExceeds(candidates, counts, n / k);
     }
 
     private int search(int e, int[] values, int[] counts) {
@@ -71,7 +85,7 @@ public class MajorityElementK {
 
     private int countMatches(int val, int[] a) {
         int count = 0;
-        for (int e: a) {
+        for (int e : a) {
             if (e == val) {
                 count += 1;
             }
