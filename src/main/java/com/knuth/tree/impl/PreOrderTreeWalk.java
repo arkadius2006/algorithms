@@ -27,17 +27,21 @@ import java.util.function.Consumer;
 public class PreOrderTreeWalk implements TreeWalk {
 
     @Override
-    public void walk(Tree x, Consumer<Tree> q) {
+    public void walk(Tree a, Consumer<Tree> q) {
         Stack stack = new LinkedStack();
-        stack.push(x);
+        stack.push(a);
 
         while (!stack.isEmpty()) {
-            x = (Tree) stack.pop();
+            a = (Tree) stack.pop();
 
-            if (x != null) {
-                q.accept(x);
-                stack.push(x.right());
-                stack.push(x.left()); // will be popped as "x" on the next iteration
+            if (a != null) {
+                // A is tree to be traversed
+                // expand in stack: A -> a B C
+                // where B is left sub-tree, C is right sub-tree
+                // and small "a" is the root node itself to be visited
+                q.accept(a);
+                stack.push(a.right());
+                stack.push(a.left()); // will be popped as "a" on the next iteration
             }
         }
     }
