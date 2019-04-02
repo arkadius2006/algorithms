@@ -1,15 +1,14 @@
 package com.knuth.tree;
 
 /**
- * Binary tree. Contains root, left sub-tree and right sub-tree. Either left or
- * right sub-tree could be empty (null reference). Empty tree is valid tree.
- *
- * Tree := empty-tree
- * Tree := (root, Tree, Tree)
+ * Binary tree.
+ * <p/>
+ * Binary tree is a finite set of nodes which is either empty,
+ * or consists of a root and two disjointed binary trees: left and right sub-trees.
  */
 public interface Tree {
 
-    Object payload();
+    String root();
 
     Tree left();
 

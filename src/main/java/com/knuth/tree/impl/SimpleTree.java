@@ -3,19 +3,19 @@ package com.knuth.tree.impl;
 import com.knuth.tree.Tree;
 
 class SimpleTree implements Tree {
-    private final Object payload;
+    private final String root;
     private final Tree left;
     private final Tree right;
 
-    public SimpleTree(Object payload, Tree left, Tree right) {
-        this.payload = payload;
+    public SimpleTree(String root, Tree left, Tree right) {
+        this.root = root;
         this.left = left;
         this.right = right;
     }
 
     @Override
-    public Object payload() {
-        return payload;
+    public String root() {
+        return root;
     }
 
     @Override
@@ -30,6 +30,6 @@ class SimpleTree implements Tree {
 
     @Override
     public String toString() {
-        return String.valueOf(payload);
+        return String.valueOf(root);
     }
 }

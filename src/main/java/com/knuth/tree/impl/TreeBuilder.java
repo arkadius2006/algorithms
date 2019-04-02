@@ -3,15 +3,15 @@ package com.knuth.tree.impl;
 import com.knuth.tree.Tree;
 
 public class TreeBuilder {
-    private final Object payload;
+    private final String root;
     private Tree left;
     private Tree right;
 
-    public TreeBuilder(Object payload) {
-        this.payload = payload;
+    public TreeBuilder(String root) {
+        this.root = root;
     }
     public Tree build() {
-        return new SimpleTree(payload, left, right);
+        return new SimpleTree(root, left, right);
     }
 
     public void left(Tree n) {
