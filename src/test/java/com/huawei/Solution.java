@@ -43,7 +43,7 @@ public class Solution {
         while (graph.size() > 0) { // num edges > 0
             // find vertex that has no outgoing edges, but some incoming
             // delete all incoming edges, increment count by number of edges removed
-            Character v = findEndpointVertex(invGraph);
+            Character v = findEndpointVertex(graph, invGraph);
             if (v != null) {
                 operationCount += removeFromGraph(v, graph, invGraph);
             } else {
@@ -70,8 +70,9 @@ public class Solution {
                     lst = new ArrayList<>();
                     invGraph.put(z, lst);
                 }
-                lst.remove(x);
+                lst.remove((Character)x); // cast, not to confused with index
                 lst.add(y);
+                operationCount += 1;
 
                 // do the same trick again with x (it has no outgoing edges)
                 operationCount += removeFromGraph(x, graph, invGraph);
@@ -89,8 +90,8 @@ public class Solution {
             char from = a.charAt(i);
             char to = b.charAt(i);
 
-            if (g.containsKey(from)) {
-                return null; // already has mapping, transformation is impossible
+            if (g.containsKey(from) && g.get(from) != to) {
+                return null; // already has a different mapping, transformation is impossible
             }
 
             g.put(from, to);
@@ -99,10 +100,10 @@ public class Solution {
         return g;
     }
 
-    private Character findEndpointVertex(Map<Character, List<Character>> invGraph) {
+    private Character findEndpointVertex(Map<Character, Character> graph, Map<Character, List<Character>> invGraph) {
         for (char c = 'a'; c <= 'z'; c += 1) {
-            List<Character> fromNodes = invGraph.get(c);
-            if (fromNodes == null || fromNodes.size() == 0) {
+            List<Character> incoming = invGraph.get(c);
+            if (!graph.containsKey(c) && incoming != null && incoming.size() > 0) {
                 return c;
             }
         }
