@@ -25,7 +25,7 @@ public class Solution3 {
 
     // collect a_i -> b_i mappings to hash table or similar structure
     private Function buildFunc(String a, String b) {
-        return null;
+        return new HashMapFunction(a, b);
     }
 
     private int solve(Function func) {
