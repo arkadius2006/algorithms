@@ -8,7 +8,7 @@ import java.util.Set;
  */
 public class LoopCounter {
 
-    public int findLoops(CharacterFunction func) {
+    public int findLoops(Function func) {
         Set<Character> visited = new HashSet<>();
 
         int loops = 0;
@@ -19,7 +19,7 @@ public class LoopCounter {
         return loops;
     }
 
-    private int searchFrom(CharacterFunction func, char x, Set<Character> marked) {
+    private int searchFrom(Function func, char x, Set<Character> marked) {
         Set<Character> seen = new HashSet<>();
 
         while (true) {
