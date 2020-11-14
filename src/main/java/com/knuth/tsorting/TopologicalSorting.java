@@ -8,6 +8,12 @@ package com.knuth.tsorting;
  * such that for each edge (a -> b) in digraph node a precedes node b in the above sequence.
  * <p/>
  * In other words a[i] -> a[j] implies i < j.
+ * <p/>
+ * We assume nodes are
+ * <pre>
+ * 0, 1, ..., n - 1
+ * </pre>
  */
 public interface TopologicalSorting {
+    
 }
