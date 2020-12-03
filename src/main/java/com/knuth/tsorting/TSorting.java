@@ -29,7 +29,7 @@ package com.knuth.tsorting;
  * For example, in case topological sorting is not possible, algorithm is free to return
  * empty sequence (length == 0 < N).
  */
-public interface TopologicalSorting {
+public interface TSorting {
 
     int[] sort(DiGraph graph);
 }
