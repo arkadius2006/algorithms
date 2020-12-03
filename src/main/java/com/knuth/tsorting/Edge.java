@@ -1,7 +1,7 @@
 package com.knuth.tsorting;
 
 /**
- * Represents digraph edge.
+ * Digraph edge.
  */
 public class Edge {
 
