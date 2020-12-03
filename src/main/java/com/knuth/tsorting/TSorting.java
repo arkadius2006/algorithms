@@ -47,6 +47,34 @@ public class TSorting {
      * where {@code p} is loop length ({@code <= n}).
      */
     public int[] sort(int n, Edge[] edges) {
+        // variables:
+        //
+        // Q            - output sequence, queue
+        // in_count[q]  - incoming edge count (to q)
+        // ex[p]        - outgoing edge list (from p)
+        // Z            - zero-incoming-degree nodes, list
+
+
+        Queue Q;                        // output sequence
+        int[] in_count = new int[n];    // incoming edge count
+        List[] ex = new List[n];        // outgoing edge list
+        List Z = newList();             // current list of nodes with zero incoming degree
+
+        // init
+        Q = newQueue();
+
+        for (int p = 0; p < n; p += 1) {
+            ex[p] = newList();
+        }
+
         throw new RuntimeException("Not implemented");
+    }
+
+    private Queue newQueue() {
+        throw new RuntimeException();
+    }
+
+    private List newList() {
+        throw new RuntimeException();
     }
 }
