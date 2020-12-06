@@ -57,24 +57,20 @@ public class TSorting {
 
         Queue Q;                        // output sequence
         int[] in_count = new int[n];    // incoming edge count
-        List[] ex = new List[n];        // outgoing edge list
-        List Z = newList();             // current list of nodes with zero incoming degree
+        Queue[] ex = new Queue[n];        // outgoing edge list
+        Queue Z = newQueue();             // current list of nodes with zero incoming degree
 
         // init
         Q = newQueue();
 
         for (int p = 0; p < n; p += 1) {
-            ex[p] = newList();
+            ex[p] = newQueue();
         }
 
         throw new RuntimeException("Not implemented");
     }
 
     private Queue newQueue() {
-        throw new RuntimeException();
-    }
-
-    private List newList() {
         throw new RuntimeException();
     }
 }
