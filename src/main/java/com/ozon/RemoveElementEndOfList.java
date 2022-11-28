@@ -54,7 +54,8 @@ public class RemoveElementEndOfList {
         // p == null: algorithm hits end of list
         // queue contains last (n+1) elements of list
         // q[0], q[1], ...., q[n]
-        // where q[n] is the last element in list: it always comes just before p (and p == null now)
+        // and next element after q[n] is p == null
+        // q[n] is the last element in list
         // q[1] is the element to be removed from queue
 
         // remove element from queue
